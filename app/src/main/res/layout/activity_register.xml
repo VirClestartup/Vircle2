@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+        android:id="@+id/frameRegister"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        style="@style/groupStylewhite_A700"
+        android:background="@color/white_A700">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_20pxh"
+            android:layout_marginEnd="@dimen/_19pxh"
+            android:layout_marginStart="@dimen/_19pxh"
+            android:layout_marginTop="@dimen/_17pxv"
+            android:layout_width="@dimen/_11pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:id="@+id/linearColumndaftarvircle"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_19pxh"
+            android:layout_marginStart="@dimen/_19pxh"
+            android:layout_marginTop="@dimen/_70pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtDaftarVirCle"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12pxh"
+                android:layout_marginStart="@dimen/_12pxh"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@string/lbl_daftar_vircle"
+                style="@style/txtHappyMonkeyregular24" tools:text="@string/lbl_daftar_vircle"/>
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/txtMembuatthread"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12pxv"
+                android:layout_width="match_parent"
+                android:text="@string/msg_membuat_thread"
+                style="@style/txtHappyMonkeyregular15"
+                tools:text="@string/msg_membuat_thread"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:id="@+id/InputName"
+                    android:layout_gravity="center_horizontal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etGroupTwentyEight"
+                        style="@style/etSolidRoundedOutline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12pxh"
+                        android:layout_marginTop="@dimen/_29pxv"
+                        android:layout_marginEnd="@dimen/_12pxh"
+                        android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_6"
+                        android:ellipsize="end"
+                        android:hint="@string/lbl_nama_lengkap"
+                        android:inputType="text"
+                        android:minHeight="48dp"
+                        android:paddingStart="@dimen/_15pxh"
+                        android:paddingTop="@dimen/_7pxv"
+                        android:paddingEnd="@dimen/_30pxh"
+                        android:paddingBottom="@dimen/_9pxv"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_700"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25pxh"
+                android:id="@+id/InputEmailregister"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGroupTwentySeven"
+                    style="@style/etSolidRoundedOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:layout_marginTop="@dimen/_32pxv"
+                    android:layout_marginEnd="@dimen/_12pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_6"
+                    android:drawableStart="@drawable/img_vector"
+                    android:drawablePadding="@dimen/_19pxh"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_email"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_12pxh"
+                    android:paddingTop="@dimen/_6pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_13pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_700"
+                    tools:ignore="Autofill"  />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25pxh"
+                android:id="@+id/inputPasswordRegister"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGroupTwentyFour"
+                    style="@style/etSolidRoundedOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:layout_marginTop="@dimen/_32pxv"
+                    android:layout_marginEnd="@dimen/_12pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_6"
+                    android:drawableStart="@drawable/img_lock"
+                    android:drawableEnd="@drawable/img_airplane"
+                    android:drawablePadding="@dimen/_30pxh"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_password"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_13pxh"
+                    android:paddingTop="@dimen/_7pxv"
+                    android:paddingEnd="@dimen/_14pxh"
+                    android:paddingBottom="@dimen/_12pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_700"
+                    tools:ignore="Autofill" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25pxh"
+                android:id="@+id/inputKonfirmasiPassword"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGroupTwentyFive"
+                    style="@style/etSolidRoundedOutline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:layout_marginTop="@dimen/_33pxv"
+                    android:layout_marginEnd="@dimen/_12pxh"
+                    android:background="@drawable/rectangle_bg_white_a700_border_black_900_radius_6"
+                    android:drawableStart="@drawable/img_lock"
+                    android:drawableEnd="@drawable/img_airplane"
+                    android:drawablePadding="@dimen/_22pxh"
+                    android:ellipsize="end"
+                    android:hint="@string/msg_konfirmasi_pass"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_13pxh"
+                    android:paddingTop="@dimen/_7pxv"
+                    android:paddingEnd="@dimen/_14pxh"
+                    android:paddingBottom="@dimen/_12pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_700"
+                    tools:ignore="Autofill" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:ellipsize="end" android:gravity="center"
+                android:id="@+id/btnDaftar"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12pxh"
+                android:layout_marginStart="@dimen/_12pxh"
+                android:layout_marginTop="@dimen/_40pxv"
+                android:layout_width="match_parent"
+                android:paddingBottom="@dimen/_11pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_11pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_daftar"
+                android:textAllCaps="false"
+                style="@style/btnSolidRounded" tools:text="@string/lbl_daftar"/>
+            <LinearLayout android:gravity="center_vertical"
+                android:id="@+id/linearRowlanguage"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12pxh"
+                android:layout_marginStart="@dimen/_12pxh"
+                android:layout_marginTop="@dimen/_25pxv"
+                android:layout_width="match_parent" android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtLanguage"
+                    style="@style/txtHappyMonkeyregular16_1"
+                    android:layout_width="103dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.60"
+                    android:ellipsize="end"
+                    android:paddingStart="@dimen/_60pxh"
+                    android:singleLine="true"
+                    android:text="@string/msg_sudah_punya_aku"
+                    tools:text="@string/msg_sudah_punya_aku" />
+                 <TextView
+                     android:id="@+id/txtMasuk"
+                     style="@style/txtHappyMonkeyregular16_2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.25"
+                     android:layout_marginStart="@dimen/_10pxh"
+                     android:ellipsize="end"
+                     android:singleLine="true"
+                     android:text="@string/lbl_masuk"
+                     android:textColor="#0277BD"
+                     tools:text="@string/lbl_masuk" />
+            </LinearLayout>
+                <TextView android:gravity="center_horizontal"
+                    android:id="@+id/txtDenganmelanjut"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_11pxh"
+                    android:layout_marginStart="@dimen/_12pxh"
+                    android:layout_marginTop="@dimen/_25pxv"
+                    android:layout_width="match_parent"
+                    android:text="@string/msg_dengan_melanjut"
+                    style="@style/txtIcelandregular16" tools:text="@string/msg_dengan_melanjut"/>
+            </LinearLayout>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

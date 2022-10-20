@@ -15,12 +15,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        android:background="@drawable/img_logovircle1">
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="@dimen/_400pxh"
-            android:layout_height="@dimen/_600pxh"
+            android:layout_width="@dimen/_300pxh"
+            android:layout_height="@dimen/_500pxh"
             app:srcCompat="@drawable/img_logovircle2" />
     </LinearLayout>
 

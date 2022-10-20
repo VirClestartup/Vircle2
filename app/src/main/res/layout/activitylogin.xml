@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
-    android:background="@color/white_A700">
+    android:background="@color/white_A700"
+
+    >
     <FrameLayout android:id="@+id/frameLogin"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

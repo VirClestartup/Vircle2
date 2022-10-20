@@ -184,4 +184,6 @@ Bulan</string>
     <string name="msg_camera_storage_permission">This Application need permission\n1.Camera permission to capture the image.\n2.Storage Access permission to save the captured image.</string>
     <string name="lbl_camera">Camera</string>
     <string name="lbl_gallery">Gallery</string>
+    <string name="msg_konfirmasi_pass">Konfirmasi Password</string>
+    <string name="lbl_nama_lengkap">Nama Lengkap</string>
 </resources>
