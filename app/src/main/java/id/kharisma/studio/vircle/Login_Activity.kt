@@ -18,34 +18,27 @@ class Login_Activity : AppCompatActivity() {
         binding = ActivityloginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        auth = FirebaseAuth.getInstance()
         binding.txtDaftar.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
         binding.btnMasuk.setOnClickListener{
-            val email = binding.InputEmailLogin.editText.toString()
-            val password = binding.InputPasswordLogin.editText.toString()
+            val email = binding.Email.text.toString()
+            val password = binding.Password.text.toString()
 
             //Validasi Email
             if (email.isEmpty()){
-                binding.InputEmailLogin.error = "Email Harus Diisi"
-                binding.InputEmailLogin.requestFocus()
-                return@setOnClickListener
-            }
-            //Validasi Email Tidak Sesuai
-            if ( Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                binding.InputEmailLogin.error = "Email Tidak Valid"
-                binding.InputEmailLogin.requestFocus()
+                binding.Email.error = "Email Harus Diisi"
+                binding.Email.requestFocus()
                 return@setOnClickListener
             }
             //Validasi Password
             if (password.isEmpty()){
-                binding.InputPasswordLogin.error = "Password Harus Diisi"
-                binding.InputPasswordLogin.requestFocus()
+                binding.Password.error = "Password Harus Diisi"
+                binding.Password.requestFocus()
                 return@setOnClickListener
             }
-            
-
             LoginFirebase(email,password)
         }
     }
@@ -53,12 +46,17 @@ class Login_Activity : AppCompatActivity() {
     private fun LoginFirebase(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-
+                if (task.isSuccessful && task.getResult()!=null) {
+                    Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
+                    reload()
                 } else {
                     Toast.makeText(this,"Login Gagal", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+    fun reload() {
+        val intent = Intent(this, Dashboard::class.java)
+        super.startActivity(intent)
     }
 
 }

@@ -42,11 +42,7 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             //Validasi Email Tidak Sesuai
-            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                binding.Email.error = "Email Tidak Valid"
-                binding.Email.requestFocus()
-                return@setOnClickListener
-            }
+
             //Validasi Password
             if (password.isEmpty()){
                 binding.Password.error = "Password Harus Diisi"
