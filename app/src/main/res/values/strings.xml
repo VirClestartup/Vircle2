@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <string name="app_name">application2</string>
+    <string name="app_name">VirCle</string>
     <string name="loading">Loading?</string>
     <string name="no_internet_connection">No internet connection!</string>
     <!--TODO ENTER YOUR APP ID BELOW-->
@@ -19,7 +19,7 @@
     <string name="lbl_xyru">XYRU</string>
     <string name="lbl_live">Live</string>
     <string name="lbl_ryu2">Ryu</string>
-    <string name="lbl_masuk">Masuk</string>
+    <string name="lbl_masuk">LOGIN</string>
     <string name="lbl_gxyru">GXYRU</string>
     <string name="lbl_421">421</string>
     <string name="lbl_start_live">Start LIVE</string>
@@ -104,7 +104,7 @@ Bulan</string>
     <string name="lbl_keluar">Keluar</string>
     <string name="lbl_23">23</string>
     <string name="msg_android_large">Android Large - One Six</string>
-    <string name="msg_masuk_dengan_go">Masuk dengan Google</string>
+    <string name="msg_masuk_dengan_go">Sign in with Google</string>
     <string name="msg_arti_hito_hito">Arti Hito Hito No Mi dalam Serial One Piece</string>
     <string name="lbl_live2">LIVE</string>
     <string name="msg_verifikasi_emai2">Verifikasi email</string>
@@ -132,7 +132,7 @@ Bulan</string>
     <string name="lbl_send_message">Send Message</string>
     <string name="lbl_join_live2">Join Live</string>
     <string name="msg_tulis_konten_di">Tulis Konten disini...</string>
-    <string name="msg_masuk_dengan_fa">Masuk dengan Facebook</string>
+    <string name="msg_masuk_dengan_fa">Sign in with Facebook</string>
     <string name="lbl_buat_live">Buat LIve</string>
     <string name="lbl_screen_live">Screen Live</string>
     <string name="lbl_email">Email</string>
@@ -186,4 +186,5 @@ Bulan</string>
     <string name="lbl_gallery">Gallery</string>
     <string name="msg_konfirmasi_pass">Konfirmasi Password</string>
     <string name="lbl_nama_lengkap">Nama Lengkap</string>
+    <string name="lbl_konfirmasipassword">Konfirmasi Password</string>/>
 </resources>

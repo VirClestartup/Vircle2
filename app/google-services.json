@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "110842542681",
+    "project_id": "vircle-ad80e",
+    "storage_bucket": "vircle-ad80e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110842542681:android:db0718934a62df6027cf48",
+        "android_client_info": {
+          "package_name": "id.kharisma.studio.vircle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110842542681-lpu37085uv8g6pmh01sqje0qno9mdtt9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.kharisma.studio.vircle",
+            "certificate_hash": "d4d1b851323fb807bd86e016b25396adb16416d1"
+          }
+        },
+        {
+          "client_id": "110842542681-d6odcrquonlcdd4fia90p6pvhmbmhh1s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAUV-mcUpOw8Vd8Sxs47-SeL0W1XQCXEI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110842542681-d6odcrquonlcdd4fia90p6pvhmbmhh1s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

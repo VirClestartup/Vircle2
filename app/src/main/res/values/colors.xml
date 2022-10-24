@@ -33,4 +33,5 @@
 <color name="bluegray_200">#adb8bc</color>
 <color name="white_A700">#ffffff</color>
 <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="gray" />
 </resources>
