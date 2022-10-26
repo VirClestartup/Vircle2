@@ -32,6 +32,7 @@ android {
     }
     buildFeatures{
         viewBinding true
+        dataBinding true
     }
     namespace 'id.kharisma.studio.vircle'
 }
@@ -46,5 +47,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation platform('com.google.firebase:firebase-bom:30.5.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
-
+    implementation 'com.android.support:design:26.1.0'
 }

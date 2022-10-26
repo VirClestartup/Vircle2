@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeMenu"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"
+        />
+
+    <item
+        android:id="@+id/CommunityMenu"
+        android:icon="@drawable/community"
+        android:title="Community"
+        />
+
+    <item
+        android:id="@+id/FriendsMenu"
+        android:icon="@drawable/friends"
+        android:title="Friends"
+        />
+    <item
+        android:id="@+id/NotifikasiMenu"
+        android:icon="@drawable/notifikasi"
+        android:title="Notifikasi"
+        />
+</menu>

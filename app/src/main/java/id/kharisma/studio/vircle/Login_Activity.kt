@@ -27,6 +27,12 @@ class Login_Activity : AppCompatActivity() {
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
 
+            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.Email.error = "Email tidak valid"
+                binding.Email.requestFocus()
+                return@setOnClickListener
+            }
+
             //Validasi Email
             if (email.isEmpty()){
                 binding.Email.error = "Email Harus Diisi"

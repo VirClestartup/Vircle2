@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data/>
     <FrameLayout android:id="@+id/frameStacklogovirclethree"
         android:layout_height="match_parent" android:layout_width="match_parent">
@@ -23,21 +25,24 @@
                     <LinearLayout
                         android:id="@+id/linearRowlogovirclethree"
                         android:layout_height="wrap_content"
-                        android:layout_width="match_parent" android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal">
                         <ImageView
                             android:id="@+id/imageLogoVirCleThree"
                             android:layout_height="@dimen/_63pxh"
                             android:layout_width="@dimen/_219pxh"
                             android:scaleType="fitXY"
                             imageRes="@{@drawable/img_logovircle3}"
-                            tools:ignore="ContentDescription" tools:src="@drawable/img_logovircle3"/>
+                            tools:ignore="ContentDescription"
+                            tools:src="@drawable/img_logovircle3"/>
                         <LinearLayout android:id="@+id/linearRowsearch"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_16pxv"
                             android:layout_marginStart="@dimen/_60pxh"
                             android:layout_marginTop="@dimen/_11pxv"
                             android:layout_weight="0.22"
-                            android:layout_width="0dp" android:orientation="horizontal">
+                            android:layout_width="0dp"
+                            android:orientation="horizontal">
                             <ImageView android:id="@+id/imageSearch"
                                 android:layout_height="@dimen/_16pxh"
                                 android:layout_marginBottom="@dimen/_8pxv"

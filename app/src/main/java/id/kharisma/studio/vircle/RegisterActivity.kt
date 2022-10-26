@@ -35,6 +35,11 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.Password.text.toString()
             val passwordConf = binding.KonfirmasiPassword.text.toString()
 
+            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                binding.Email.error = "Email Tidak Valid"
+                binding.Email.requestFocus()
+                return@setOnClickListener
+            }
             //Validasi Email
             if (email.isEmpty()){
                 binding.Email.error = "Email Harus Diisi"
