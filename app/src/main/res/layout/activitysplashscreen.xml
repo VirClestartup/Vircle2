@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="@dimen/_300pxh"
-            android:layout_height="@dimen/_500pxh"
+            android:layout_height="@dimen/_600pxh"
             app:srcCompat="@drawable/img_logovircle2" />
     </LinearLayout>
 
