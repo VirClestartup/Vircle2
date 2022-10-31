@@ -27,7 +27,7 @@ class Login_Activity : AppCompatActivity() {
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
 
-            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.Email.error = "Email tidak valid"
                 binding.Email.requestFocus()
                 return@setOnClickListener
@@ -61,7 +61,7 @@ class Login_Activity : AppCompatActivity() {
             }
     }
     fun reload() {
-        val intent = Intent(this, Dashboard::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         super.startActivity(intent)
     }
 

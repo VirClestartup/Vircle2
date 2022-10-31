@@ -186,5 +186,7 @@ Bulan</string>
     <string name="lbl_gallery">Gallery</string>
     <string name="msg_konfirmasi_pass">Konfirmasi Password</string>
     <string name="lbl_nama_lengkap">Nama Lengkap</string>
-    <string name="lbl_konfirmasipassword">Konfirmasi Password</string>/>
+    <string name="lbl_konfirmasipassword">Konfirmasi Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>/>
 </resources>

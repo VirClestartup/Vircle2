@@ -3,24 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white_A700">
 
     <LinearLayout
         android:id="@+id/rootFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        >
         <ImageView
             android:id="@+id/imageLogoVirCleThree"
             android:layout_height="@dimen/_63pxh"
             android:layout_width="@dimen/_219pxh"
-            android:scaleType="fitXY"
-            android:imageRes="@{@drawable/img_logovircle3}"
-            tools:ignore="ContentDescription"
-            tools:src="@drawable/img_logovircle3"/>
+            android:src="@drawable/img_logovircle3" />
         <LinearLayout android:id="@+id/linearRowsearch"
             android:layout_height="match_parent"
-            android:layout_width="@dimen/_90pxh"
-            android:layout_marginStart="@dimen/_100pxh"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/_90pxh"
             android:layout_gravity="end"
             android:gravity="center">
             <ImageView android:id="@+id/imageSearch"
@@ -33,26 +33,47 @@
                 tools:ignore="ContentDescription" tools:src="@drawable/img_search"/>
             <ImageView android:id="@+id/imageUser"
                 android:layout_height="@dimen/_45pxh"
-                android:layout_marginStart="@dimen/_9pxh"
+                android:layout_marginStart="@dimen/_15pxh"
                 android:layout_width="@dimen/_45pxh"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_user"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_user"/>
         </LinearLayout>
     </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/nav_bott"
+        android:layout_below="@+id/rootFragment"
+        android:id="@+id/nav_up"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="600dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_500pxh"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/nav_viewupper"
+        app:menu="@menu/bottom_navigation">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/nav_view"/>
+        android:layout_above="@+id/nav_view"
+        android:layout_below="@+id/nav_up"
+        android:id="@+id/nav_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_5pxh"
             android:layout_marginTop="@dimen/_500pxh"
             android:layout_alignParentBottom="true"
             android:id="@+id/nav_view"
-            app:menu="@menu/bottom_navigation"/>
+            app:menu="@menu/bottom_navigation">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

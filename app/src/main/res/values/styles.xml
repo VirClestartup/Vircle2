@@ -1,53 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="txtInterregular17">
         <item name="android:textSize">@dimen/_17pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular18">
         <item name="android:textSize">@dimen/_18pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular15">
         <item name="android:textSize">@dimen/_15pxh</item>
         <item name="android:textColor">@color/gray_705</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular13">
         <item name="android:textSize">@dimen/_13pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular14">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular11">
         <item name="android:textSize">@dimen/_11pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular12">
         <item name="android:textSize">@dimen/_12pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="btnSolidRounded_4">
         <item name="android:textSize">@dimen/_24pxh</item>
         <item name="android:textColor">@color/gray_100</item>
@@ -55,6 +64,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_17_5</item>
     </style>
+
     <style name="btnSolidRounded_3">
         <item name="android:textSize">@dimen/_24pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -62,6 +72,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_25</item>
     </style>
+
     <style name="btnSolidRounded_2">
         <item name="android:textSize">@dimen/_17pxh</item>
         <item name="android:textColor">@color/gray_901</item>
@@ -69,6 +80,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_17</item>
     </style>
+
     <style name="btnSolidRounded_1">
         <item name="android:textSize">@dimen/_17pxh</item>
         <item name="android:textColor">@color/blue_700</item>
@@ -76,9 +88,11 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_17</item>
     </style>
+
     <style name="groupStylecornerRadius">
         <item name="android:background">@drawable/rectangle_border_black_900_radius_20_5</item>
     </style>
+
     <style name="btnSolidRounded_7">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -86,12 +100,14 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_19</item>
     </style>
+
     <style name="txtInterregular19">
         <item name="android:textSize">@dimen/_19pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="btnSolidRounded_6">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -99,6 +115,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_25</item>
     </style>
+
     <style name="etSolidRounded_1">
         <item name="android:textSize">@dimen/_19pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -106,6 +123,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_gray_201_radius_6</item>
     </style>
+
     <style name="btnSolidRounded_5">
         <item name="android:textSize">@dimen/_32pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -113,28 +131,35 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_25</item>
     </style>
+
     <style name="txtInterregular10">
         <item name="android:textSize">@dimen/_10pxh</item>
         <item name="android:textColor">@color/bluegray_700</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular36">
         <item name="android:textSize">@dimen/_36pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="btnSolidRoundedOutline">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/gray_701</item>
         <item name="android:fontFamily">@font/iceland</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="groupStylewhite_A700">
         <item name="android:background">@drawable/rectangle_bg_white_a700</item>
     </style>
+
     <style name="etSolidRounded">
         <item name="android:textSize">@dimen/_17pxh</item>
         <item name="android:textColor">@color/gray_703</item>
@@ -142,6 +167,7 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_16</item>
     </style>
+
     <style name="btnSolidRounded">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -149,49 +175,65 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_19</item>
     </style>
+
     <style name="txtHappyMonkeyregular16_2">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/light_blue_400</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylegray_200">
         <item name="android:background">@drawable/rectangle_bg_gray_200</item>
     </style>
+
     <style name="txtHappyMonkeyregular16_1">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylewhite_1">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_bluegray_400_radius_10</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_bluegray_400_radius_10
+        </item>
     </style>
+
     <style name="txtInterregular17_1">
         <item name="android:textSize">@dimen/_17pxh</item>
         <item name="android:textColor">@color/gray_703</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylewhite_2">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_bl_19_br_19</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_bl_19_br_19
+        </item>
     </style>
+
     <style name="etSolidRoundedOutline">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/gray_701</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="txtIcelandregular20_1">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/iceland</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylebluegray_1">
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_17</item>
     </style>
+
     <style name="txtSolidRounded">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -199,20 +241,27 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_white_a700_radius_4</item>
     </style>
+
     <style name="etSolidRoundedOutline_3">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_light_blue_200_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_light_blue_200_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="etSolidRoundedOutline_2">
         <item name="android:textSize">@dimen/_13pxh</item>
         <item name="android:textColor">@color/gray_500</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="etRoundedOutline">
         <item name="android:textSize">@dimen/_15pxh</item>
         <item name="android:textColor">@color/black_900</item>
@@ -220,57 +269,72 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_border_black_900_radius_20_5</item>
     </style>
+
     <style name="txtInderregular14_1">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/blue_700</item>
         <item name="android:fontFamily">@font/inder</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="etSolidRoundedOutline_4">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/gray_701</item>
         <item name="android:fontFamily">@font/iceland</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="etSolidRoundedOutline_1">
-        <item name="android:background">@drawable/rectangle_bg_white_a700_border_black_900_radius_6</item>
+        <item name="android:background">
+            @drawable/rectangle_bg_white_a700_border_black_900_radius_6
+        </item>
     </style>
+
     <style name="groupStylebluegray_200">
         <item name="android:background">@drawable/rectangle_bg_bluegray_200</item>
     </style>
+
     <style name="txtInterbold20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/bluegray_400</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
+
     <style name="txtHappyMonkeyregular96">
         <item name="android:textSize">@dimen/_96pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylebluegray_101cornerRadius">
         <item name="android:background">@drawable/rectangle_bg_bluegray_101_radius_6</item>
     </style>
+
     <style name="txtregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular13">
         <item name="android:textSize">@dimen/_13pxh</item>
         <item name="android:textColor">@color/gray_500</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular15">
         <item name="android:textSize">@dimen/_15pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtSolidRounded_1">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/gray_800</item>
@@ -278,74 +342,87 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_18_5</item>
     </style>
+
     <style name="txtHappyMonkeyregular14">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtIcelandregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/iceland</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInderregular14">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/gray_700</item>
         <item name="android:fontFamily">@font/inder</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/gray_701</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtregular16">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/bluegray_400</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular24">
         <item name="android:textSize">@dimen/_24pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular14_2">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/light_blue_400</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular14_1">
         <item name="android:textSize">@dimen/_14pxh</item>
         <item name="android:textColor">@color/gray_702</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterbold32">
         <item name="android:textSize">@dimen/_32pxh</item>
         <item name="android:textColor">@color/bluegray_400</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
+
     <style name="txtInterregular18_1">
         <item name="android:textSize">@dimen/_18pxh</item>
         <item name="android:textColor">@color/blue_700</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="groupStylewhite_A700cornerRadius">
         <item name="android:background">@drawable/rectangle_bg_white_a700_radius_12</item>
     </style>
+
     <style name="txtIcelandregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/gray_701</item>
         <item name="android:fontFamily">@font/iceland</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txt">
         <item name="android:textSize">@dimen/_96pxh</item>
         <item name="android:textColor">@color/light_blue_200</item>
@@ -353,51 +430,63 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_dhi_0</item>
     </style>
+
     <style name="txtHappyMonkeyregular36_1">
         <item name="android:textSize">@dimen/_36pxh</item>
         <item name="android:textColor">@color/gray_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/gray_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtInterregular20">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="txtHappyMonkeyregular24">
         <item name="android:textSize">@dimen/_24pxh</item>
         <item name="android:textColor">@color/black_900</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
     </style>
+
     <style name="searchViewGroupSeventySeven" parent="Widget.AppCompat.SearchView">
         <item name="android:textSize">@dimen/_15pxh</item>
         <item name="android:textColorPrimary">@color/black_900</item>
         <item name="android:textColorHint">@color/black_900</item>
     </style>
+
     <style name="searchViewGroupSix" parent="Widget.AppCompat.SearchView">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColorPrimary">@color/black_900</item>
         <item name="android:textColorHint">@color/black_900</item>
     </style>
+
     <style name="searchViewGroupFortyFour" parent="Widget.AppCompat.SearchView">
         <item name="android:textSize">@dimen/_15pxh</item>
         <item name="android:textColorPrimary">@color/black_900</item>
         <item name="android:textColorHint">@color/black_900</item>
     </style>
+
     <style name="searchViewGroupThirtyEight" parent="Widget.AppCompat.SearchView">
         <item name="android:textSize">@dimen/_20pxh</item>
         <item name="android:textColorPrimary">@color/black_900</item>
         <item name="android:textColorHint">@color/black_900</item>
     </style>
 
+    <style name="Widget.Theme.Vircle.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/light_blue_400</item>
+    </style>
 
 
 </resources>

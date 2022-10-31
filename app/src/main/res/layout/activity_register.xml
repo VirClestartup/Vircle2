@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         style="@style/groupStylewhite_A700"
         android:background="@color/white_A700">
-        <ImageView android:id="@+id/imageArrowleft"
+        <ImageView
+            android:id="@+id/imageArrowleft"
             android:layout_height="@dimen/_20pxh"
             android:layout_marginEnd="@dimen/_19pxh"
             android:layout_marginStart="@dimen/_19pxh"
@@ -230,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_11pxh"
                     android:layout_marginStart="@dimen/_12pxh"
-                    android:layout_marginTop="@dimen/_25pxv"
+                    android:layout_marginTop="@dimen/_100pxv"
                     android:layout_width="match_parent"
                     android:text="@string/msg_dengan_melanjut"
                     style="@style/txtIcelandregular16" tools:text="@string/msg_dengan_melanjut"/>

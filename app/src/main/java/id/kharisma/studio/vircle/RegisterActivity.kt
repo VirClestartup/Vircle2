@@ -28,14 +28,17 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, Login_Activity::class.java)
             startActivity(intent)
         }
-
+        binding.imageArrowleft.setOnClickListener{
+            val intent = Intent(this, Login_Activity::class.java)
+            startActivity(intent)
+        }
         binding.btnDaftar.setOnClickListener{
             val name = binding.Nameperson.text.toString()
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
             val passwordConf = binding.KonfirmasiPassword.text.toString()
 
-            if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.Email.error = "Email Tidak Valid"
                 binding.Email.requestFocus()
                 return@setOnClickListener
@@ -97,7 +100,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun reload() {
-        val intent = Intent(this, Dashboard::class.java)
+        val intent = Intent(this, HomeActivity::class.java)
         super.startActivity(intent)
     }
     public override fun onStart() {
