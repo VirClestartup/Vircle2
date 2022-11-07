@@ -47,6 +47,9 @@ class Login_Activity : AppCompatActivity() {
             }
             LoginFirebase(email,password)
         }
+        binding.frameStackgoogle.setOnClickListener{
+
+        }
     }
 
     private fun LoginFirebase(email: String, password: String) {
@@ -64,5 +67,4 @@ class Login_Activity : AppCompatActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         super.startActivity(intent)
     }
-
 }
