@@ -13,13 +13,18 @@
         />
 
     <item
-        android:id="@+id/FriendsMenu"
-        android:icon="@drawable/friends"
-        android:title="Friends"
+        android:id="@+id/SearchMenu"
+        android:icon="@drawable/img_search"
+        android:title="Search"
         />
     <item
-        android:id="@+id/NotifikasiMenu"
+        android:id="@+id/NotificationMenu"
         android:icon="@drawable/notifikasi"
-        android:title="Notifikasi"
+        android:title="Notification"
+        />
+    <item
+        android:id="@+id/ProfileMenu"
+        android:icon="@drawable/img_profile"
+        android:title="Profile"
         />
 </menu>

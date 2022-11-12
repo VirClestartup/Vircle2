@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountsettingActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayoutProfilesetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ProfilesettingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/btn_CloseProfile"
+                    android:layout_width="@dimen/_20pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/close"/>
+                <ImageView
+                    android:id="@+id/btn_SaveProfile"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginRight="@dimen/_15pxh"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/save_edited_info"/>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Profile_imageview"
+        android:layout_width="@dimen/_130pxh"
+        android:layout_height="@dimen/_130pxh"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_15pxh"
+        android:src="@drawable/img_profile"
+        android:layout_below="@+id/appbarlayoutProfilesetting"
+        />
+    <TextView
+        android:id="@+id/text_changeimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Profile_imageview"
+        android:text="Changeimage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16pxh"
+        android:textColor="@color/design_default_color_primary"/>
+
+    <EditText
+        android:id="@+id/Fullname_editprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_changeimage"
+        android:layout_marginLeft="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_16pxh"
+        android:layout_marginRight="@dimen/_20pxh"
+        android:hint="FullName"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/Username_editprofile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Fullname_editprofile"
+        android:layout_marginLeft="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_16pxh"
+        android:layout_marginRight="@dimen/_20pxh"
+        android:hint="Username"
+        android:inputType="text"
+        android:minHeight="48dp" />
+    <Button
+        android:id="@+id/btn_DeleteProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:background="@color/design_default_color_primary"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="@dimen/_20pxh"
+        android:layout_marginRight="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_16pxh"
+        android:text="Delete Account"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_16pxh"/>
+
+</RelativeLayout>

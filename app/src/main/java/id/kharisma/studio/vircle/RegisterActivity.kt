@@ -28,10 +28,7 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, Login_Activity::class.java)
             startActivity(intent)
         }
-        binding.imageArrowleft.setOnClickListener{
-            val intent = Intent(this, Login_Activity::class.java)
-            startActivity(intent)
-        }
+
         binding.btnDaftar.setOnClickListener{
             val name = binding.Nameperson.text.toString()
             val email = binding.Email.text.toString()

@@ -23,6 +23,7 @@ class Login_Activity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
         binding.btnMasuk.setOnClickListener{
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
@@ -48,7 +49,6 @@ class Login_Activity : AppCompatActivity() {
             LoginFirebase(email,password)
         }
         binding.frameStackgoogle.setOnClickListener{
-
         }
     }
 

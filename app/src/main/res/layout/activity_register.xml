@@ -11,16 +11,7 @@
         android:layout_width="match_parent"
         style="@style/groupStylewhite_A700"
         android:background="@color/white_A700">
-        <ImageView
-            android:id="@+id/imageArrowleft"
-            android:layout_height="@dimen/_20pxh"
-            android:layout_marginEnd="@dimen/_19pxh"
-            android:layout_marginStart="@dimen/_19pxh"
-            android:layout_marginTop="@dimen/_17pxv"
-            android:layout_width="@dimen/_11pxh"
-            android:scaleType="fitXY"
-            android:src="@drawable/img_arrowleft"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+
         <LinearLayout
             android:gravity="center_horizontal"
             android:id="@+id/linearColumndaftarvircle"
