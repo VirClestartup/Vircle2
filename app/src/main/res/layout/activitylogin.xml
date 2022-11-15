@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:src="@drawable/img_logovircle3"/>
+                    android:src="@drawable/logoLogin"/>
             </FrameLayout>
 
 
@@ -138,7 +138,7 @@
                 android:singleLine="true"
                 android:text="@string/lbl_masuk"
                 android:textAllCaps="false"
-                tools:text="@string/lbl_masuk" />
+                android:textColor="@color/design_default_color_primary"/>
 
             <TextView
                 android:id="@+id/txtAtau"

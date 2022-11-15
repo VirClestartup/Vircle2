@@ -59,38 +59,71 @@
         android:textStyle="bold"
         android:textSize="@dimen/_16pxh"
         android:textColor="@color/design_default_color_primary"/>
-
-    <EditText
-        android:id="@+id/Fullname_editprofile"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fullname_layout"
+        android:layout_width="@dimen/_350pxh"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20pxh"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true"
         android:layout_below="@+id/text_changeimage"
-        android:layout_marginLeft="@dimen/_20pxh"
-        android:layout_marginTop="@dimen/_16pxh"
-        android:layout_marginRight="@dimen/_20pxh"
-        android:hint="FullName"
-        android:inputType="text"
-        android:minHeight="48dp" />
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+        app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+        app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+        app:boxCornerRadiusTopStart="@dimen/_10pxh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <EditText
-        android:id="@+id/Username_editprofile"
-        android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Fullname_editprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="FullName"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="@color/gray_701"
+            android:gravity="center"
+             />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Username_layout"
+        android:layout_width="@dimen/_350pxh"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Fullname_editprofile"
-        android:layout_marginLeft="@dimen/_20pxh"
-        android:layout_marginTop="@dimen/_16pxh"
-        android:layout_marginRight="@dimen/_20pxh"
-        android:hint="Username"
-        android:inputType="text"
-        android:minHeight="48dp" />
+        android:layout_marginTop="@dimen/_20pxh"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        app:boxBackgroundColor="@color/white"
+        android:layout_below="@+id/fullname_layout"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+        app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+        app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+        app:boxCornerRadiusTopStart="@dimen/_10pxh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Username_editprofile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btn_DeleteProfile"
+        style="@style/btnSolidRounded"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="6dp"
-        android:background="@color/design_default_color_primary"
-        android:textColor="@android:color/white"
+        android:textColor="@color/design_default_color_primary"
         android:layout_marginLeft="@dimen/_20pxh"
         android:layout_marginRight="@dimen/_20pxh"
         android:layout_marginTop="@dimen/_16pxh"

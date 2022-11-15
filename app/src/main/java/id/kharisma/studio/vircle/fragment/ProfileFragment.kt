@@ -13,6 +13,7 @@ import id.kharisma.studio.vircle.AccountsettingActivity
 import id.kharisma.studio.vircle.Login_Activity
 import id.kharisma.studio.vircle.R
 import kotlinx.android.synthetic.main.fragment_profile.view.*
+import kotlinx.coroutines.Dispatchers.Main
 
 
 class ProfileFragment : Fragment() {
@@ -27,10 +28,14 @@ class ProfileFragment : Fragment() {
         view.btn_editProfile.setOnClickListener {
             startActivity(Intent(context, AccountsettingActivity::class.java))
         }
+        if (user.currentUser != null){
+            user.currentUser?.let{
+                view.profile_username.text = it.email
+            }
+        }
         view.btnsignout.setOnClickListener {
             user.signOut()
-            val intent = Intent(context, Login_Activity::class.java)
-            super.startActivity(intent)
+            startActivity(Intent(context,Login_Activity::class.java))
         }
         return view
     }
