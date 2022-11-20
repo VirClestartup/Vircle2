@@ -56,11 +56,11 @@
                     app:boxCornerRadiusTopEnd="@dimen/_10pxh">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/Nameperson"
+                        android:id="@+id/usernameRegister"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minHeight="48dp"
-                        android:hint="@string/lbl_nama_lengkap"
+                        android:hint="@string/lbl_username"
                         android:inputType="textPersonName"
                         android:paddingStart="@dimen/_12pxh"
                         android:paddingTop="@dimen/_6pxv"

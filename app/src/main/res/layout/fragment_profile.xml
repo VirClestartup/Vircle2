@@ -43,7 +43,7 @@
                     android:id="@+id/imageuser"
                     android:layout_width="@dimen/_60pxh"
                     android:layout_height="@dimen/_60pxh"
-                    android:src="@drawable/img_profile"
+                    android:src="@drawable/profile"
                     android:layout_gravity="center_horizontal"
                     />
                 <TextView
