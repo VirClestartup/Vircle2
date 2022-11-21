@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.SearchFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayoutsearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lbl_friends"
+            android:fontFamily="@font/happymonkeyregular"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_25sp"
+            android:layout_marginTop="@dimen/_10sp"
+            android:gravity="center"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/searchToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/button_black_background"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_19pxh">
+
+                <ImageView
+                    android:id="@+id/Searchicon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_search32"
+                    android:layout_centerVertical="true"/>
+
+                <EditText
+                    android:id="@+id/Searchtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="@dimen/_15pxh"
+                    android:layout_toEndOf="@+id/Searchicon"
+                    android:hint="search.."
+                    android:inputType="text" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbarlayoutsearch" />
+
+</RelativeLayout>
