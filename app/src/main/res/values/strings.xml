@@ -39,7 +39,7 @@
     <string name="lbl_53">53</string>
     <string name="lbl_versi_aplikasi">Versi Aplikasi</string>
     <string name="lbl_1_000_0">1.000.0</string>
-    <string name="lbl_2_bulan">2
+    <string name="lbl_2_bulan">
 Bulan</string>
     <string name="lbl_write_a_message">Write a message</string>
     <string name="lbl_wendy">Wendy</string>
@@ -72,6 +72,7 @@ Bulan</string>
     <string name="lbl_surya">Surya</string>
     <string name="lbl_13_juni_2022">13 Juni 2022</string>
     <string name="lbl_friends_7">Friends (7)</string>
+    <string name="lbl_friends">Friends</string>
     <string name="lbl_1_komentar">1 Komentar</string>
     <string name="msg_forum_komunitas">Forum Komunitas penggemar dan pecinta Anime. Berbincang dan berdiskusi hal terbaru yang berunsur jepang</string>
     <string name="lbl_start_meeting">Start Meeting</string>
