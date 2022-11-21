@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
         }
         if (user.currentUser != null){
             user.currentUser?.let{
-                view.profile_username.text = it.email
+                view.profile_username.text = it.displayName
             }
         }
         view.btnsignout.setOnClickListener {

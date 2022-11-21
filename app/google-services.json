@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "110842542681",
-    "project_id": "vircle-ad80e",
-    "storage_bucket": "vircle-ad80e.appspot.com"
+    "project_number": "815323099519",
+    "project_id": "vircle-471e8",
+    "storage_bucket": "vircle-471e8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:110842542681:android:db0718934a62df6027cf48",
+        "mobilesdk_app_id": "1:815323099519:android:e7117f0e48b7861bbf6a4a",
         "android_client_info": {
           "package_name": "id.kharisma.studio.vircle"
         }
       },
       "oauth_client": [
         {
-          "client_id": "110842542681-lpu37085uv8g6pmh01sqje0qno9mdtt9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "id.kharisma.studio.vircle",
-            "certificate_hash": "d4d1b851323fb807bd86e016b25396adb16416d1"
-          }
-        },
-        {
-          "client_id": "110842542681-d6odcrquonlcdd4fia90p6pvhmbmhh1s.apps.googleusercontent.com",
+          "client_id": "815323099519-mqr5d0jnokkhf842kkku8t0tjn6tb2va.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAAUV-mcUpOw8Vd8Sxs47-SeL0W1XQCXEI"
+          "current_key": "AIzaSyAiMa9iXW23OJcOOunM5Ps_l3kFIVk0dw8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "110842542681-d6odcrquonlcdd4fia90p6pvhmbmhh1s.apps.googleusercontent.com",
+              "client_id": "815323099519-mqr5d0jnokkhf842kkku8t0tjn6tb2va.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
