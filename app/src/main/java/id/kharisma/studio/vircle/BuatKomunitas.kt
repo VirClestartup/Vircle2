@@ -3,9 +3,9 @@ package id.kharisma.studio.vircle
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class PencarianActivity : AppCompatActivity() {
+class BuatKomunitas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_pencarian)
+        setContentView(R.layout.activity_buat_komunitas)
     }
 }
