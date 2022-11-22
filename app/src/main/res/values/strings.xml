@@ -39,7 +39,7 @@
     <string name="lbl_53">53</string>
     <string name="lbl_versi_aplikasi">Versi Aplikasi</string>
     <string name="lbl_1_000_0">1.000.0</string>
-    <string name="lbl_2_bulan">
+    <string name="lbl_2_bulan">2
 Bulan</string>
     <string name="lbl_write_a_message">Write a message</string>
     <string name="lbl_wendy">Wendy</string>
@@ -49,7 +49,9 @@ Bulan</string>
     <string name="lbl_one_piece">One Piece</string>
     <string name="msg_alasan_buat_kom">Alasan Buat Komunitas</string>
     <string name="lbl_249_komentar">249 Komentar</string>
-    <string name="lbl_username">@Username</string>
+    <string name="lbl_username">Username</string>
+    <string name="lbl_nohandphone">No Handphone</string>
+    <string name="lbl_namakomunitas">Nama Komunitas</string>
     <string name="lbl_5_bulan">5
 Bulan</string>
     <string name="lbl_moderator">Moderator</string>
@@ -58,6 +60,7 @@ Bulan</string>
     <string name="msg_masukkan_kode_v">Masukkan kode verifikasi yang telah dikirim melalui email ke email@email.com</string>
     <string name="msg_echiro_oda_konf">Echiro Oda Konfirmasi mengenai arc terakhir di One Piece</string>
     <string name="lbl_nama_komunitas">Nama Komunitas</string>
+    <string name="lbl_diskripsi">Diskripsi</string>
     <string name="lbl_buat_komunitas">Buat Komunitas</string>
     <string name="lbl_atau">Atau</string>
     <string name="lbl_40">40</string>
@@ -125,7 +128,7 @@ Bulan</string>
     <string name="lbl_nomor_handphone">Nomor Handphone</string>
     <string name="lbl_10">10</string>
     <string name="msg_contoh_komunita">Contoh Komunitas</string>
-    <string name="lbl_vircle"> VirCle</string>
+    <string name="lbl_vircle">VirCle</string>
     <string name="lbl_buat_komuntas">Buat Komuntas</string>
     <string name="lbl_screen_member">Screen Member</string>
     <string name="lbl_daftar_vircle">Daftar VirCle</string>
@@ -153,7 +156,7 @@ Bulan</string>
     <string name="lbl_screen_profile">Screen Profile</string>
     <string name="lbl_login">Login</string>
     <string name="lbl_rp_50_000">Rp.50.000</string>
-    <string name="msg_diisi_dengan_no">Diisi dengan nomor handphone yang \u2028aktif dan terhubung WA, agar tim \u2028VIrCle dapat menginfokan persetujuan\u2028atas pendaftaran komunitasmu</string>
+    <string name="msg_diisi_dengan_no">Diisi dengan nomor handphone yang aktif dan terhubung WA, agar tim VirCle dapat menginfokan persetujuan atas pendaftaran komunitasmu</string>
     <string name="lbl_member2">MEMBER</string>
     <string name="lbl_popular">Popular</string>
     <string name="msg_billy_12_juni">Billy . 12 Juni 2022</string>
@@ -171,6 +174,7 @@ Bulan</string>
     <string name="lbl_imin">Imin</string>
     <string name="msg_android_large7">Android Large - One Four</string>
     <string name="lbl_daftar">daftar</string>
+    <string name="tmbl_buat">buat</string>
     <string name="msg_android_large9">Android Large - One Two</string>
     <string name="lbl_dan"> dan </string>
     <string name="lbl_terbaru">Terbaru</string>
@@ -180,6 +184,7 @@ Bulan</string>
     <string name="msg_screen_perteman">Screen Pertemanan</string>
     <string name="lbl_komunitas_saya">Komunitas Saya</string>
     <string name="lbl_deskripsi">Deskripsi</string>
+    <string name="lbl_alasan">Alasan buat Komunitas</string>
     <string name="lbl_rp_155_000">Rp.155.000</string>
     <string name="msg_please_enter_valid_email">Please enter valid email</string>
     <string name="msg_please_enter_valid_pa">Please enter valid password</string>

@@ -38,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_marginStart="@dimen/_30pxh">
+                android:layout_marginStart="@dimen/_60pxh">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageuser"
                     android:layout_width="@dimen/_60pxh"
@@ -51,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="username"
+                    style="@style/txtHappyMonkeyregular15"
                     android:layout_marginTop="@dimen/_6pxv"
                     android:textColor="@color/black"
                     android:layout_below="@+id/imageuser"
@@ -88,15 +89,17 @@
                             android:text="Post"
                             android:textSize="20dp"
                             android:textColor="@android:color/black"/>
+
                         <Button
                             android:id="@+id/btn_editProfile"
                             android:layout_width="@dimen/_170pxh"
                             android:layout_height="32dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/buttons_background"
                             android:text="Edit Profile"
                             android:textAllCaps="false"
-                            android:layout_marginTop="2dp"
                             android:textStyle="bold"
-                            android:background="@drawable/buttons_background"/>
+                            tools:ignore="TouchTargetSizeCheck" />
 
                     </LinearLayout>
 
