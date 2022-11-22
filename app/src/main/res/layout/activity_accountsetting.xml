@@ -41,32 +41,22 @@
     </com.google.android.material.appbar.AppBarLayout>
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/Profile_imageview"
-        android:layout_width="@dimen/_130pxh"
-        android:layout_height="@dimen/_130pxh"
+        android:layout_width="@dimen/_150pxh"
+        android:layout_height="@dimen/_150pxh"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_15pxh"
+        android:layout_marginTop="@dimen/_80pxh"
         android:src="@drawable/profile"
         android:layout_below="@+id/appbarlayoutProfilesetting"
         />
-    <TextView
-        android:id="@+id/text_changeimage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Profile_imageview"
-        android:text="Changeimage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="6dp"
-        android:textStyle="bold"
-        android:textSize="@dimen/_16pxh"
-        android:textColor="@color/design_default_color_primary"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fullname_layout"
         android:layout_width="@dimen/_350pxh"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_50pxh"
         android:layout_gravity="center_horizontal"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/text_changeimage"
+        android:layout_below="@+id/Profile_imageview"
         app:boxBackgroundColor="@color/white"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="@dimen/_10pxh"

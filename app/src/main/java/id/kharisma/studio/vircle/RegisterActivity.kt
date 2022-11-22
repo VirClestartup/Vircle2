@@ -82,24 +82,29 @@ class RegisterActivity : AppCompatActivity() {
     }
     private fun RegisterFirebase(name: String, email: String, password: String, progressDialog: ProgressDialog) {
         database = FirebaseDatabase.getInstance().getReference("Users")
-        val User = Users(name)
+
+        val userId = database.push().key!!
+        val user = Users(userId,name,email,password)
+        database.child(userId).setValue(user)
+            .addOnCompleteListener {task ->
+            if (task.isSuccessful && task.getResult()!=null) {
+                binding.usernameRegister.text?.clear()
+                progressDialog.dismiss()
+                Toast.makeText(this, "data tersimpan", Toast.LENGTH_LONG).show()
+            }else{
+                progressDialog.dismiss()
+                Toast.makeText(this,"${task.exception?.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful && task.getResult()!=null) {
-                    val user = Firebase.auth.currentUser
-                    database.child(name).push().setValue(User).addOnCompleteListener {
-                        binding.usernameRegister.text?.clear()
-                        progressDialog.dismiss()
-                        Toast.makeText(this, "data tersimpan", Toast.LENGTH_LONG).show()
-                    }.addOnFailureListener{
-                        progressDialog.dismiss()
-                        Toast.makeText(this, "data tidak tersimpan", Toast.LENGTH_LONG).show()
-                    }
-                    if (user!=null) {
+                    val users = Firebase.auth.currentUser
+                    if (users!=null) {
                         val profileUpdates = userProfileChangeRequest {
                             displayName = name
                         }
-                        user!!.updateProfile(profileUpdates)
+                        users!!.updateProfile(profileUpdates)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
                                     reload()
