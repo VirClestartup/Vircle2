@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10pxh"
+    android:layout_marginLeft="@dimen/_5pxh"
+    android:layout_marginRight="@dimen/_5pxh">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userprofile_item"
+            android:layout_width="@dimen/_60pxh"
+            android:layout_height="@dimen/_60pxh"
+            android:layout_marginLeft="@dimen/_10pxh"
+            android:padding="@dimen/_5pxh"
+            android:src="@drawable/profile"
+            />
+        <LinearLayout
+            android:layout_width="@dimen/_220pxh"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/username_search"
+                style="@style/txtHappyMonkeyregular15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userprofile_item"
+                android:layout_marginTop="@dimen/_5pxh"
+                android:gravity="center"
+                android:text="Username" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFollow"
+                style="@style/btnSolidRounded"
+                android:layout_width="@dimen/_90pxh"
+                android:layout_height="@dimen/_30pxh"
+                android:layout_below="@+id/username_search"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginTop="@dimen/_10pxh"
+                android:layout_marginEnd="@dimen/_10pxh"
+                android:layout_marginBottom="@dimen/_10pxh"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/lbl_follow"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
