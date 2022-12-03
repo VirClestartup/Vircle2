@@ -5,10 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".fragment.CommunityFragment"
+    tools:context=".fragment.PopularComFragment"
     >
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50pxh"
@@ -23,29 +21,57 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txt_Komunitassaya"
                 android:layout_width="wrap_content"
                 style="@style/txtHappyMonkeyregular18"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"
                 android:layout_marginEnd="7dp"
                 android:text="Komunitas Saya"
-                android:textColor="@color/light_blue_600"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txt_Kominitaspopular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/txtHappyMonkeyregular18"
+                style="@style/txtHappyMonkeyregular16_1"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="7dp"
                 android:text="Popular"
-                android:textColor="@color/black" />
+                android:textColor="@color/light_blue_600" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="@dimen/_380pxh"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50pxh"
+        android:layout_marginLeft="@dimen/_17pxv"
+        android:id="@+id/InputSearchcom"
+        android:layout_gravity="center_horizontal"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="@dimen/_10pxh"
+        app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+        app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+        app:boxCornerRadiusTopEnd="@dimen/_10pxh">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchcom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/img_search"
+            android:drawablePadding="@dimen/_19pxh"
+            android:hint="@string/lbl_search"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="@dimen/_12pxh"
+            android:paddingTop="@dimen/_6pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_7pxv"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_701"
+            tools:ignore="Autofill" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ScrollView
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/lay_MenuTop"
         android:layout_width="match_parent"
         android:layout_height="690dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:padding="8dp">
 
 

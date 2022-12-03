@@ -1,9 +1,7 @@
 package id.kharisma.studio.vircle
 
 import android.app.ProgressDialog
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -20,7 +18,6 @@ import id.kharisma.studio.vircle.databinding.ActivityRegisterBinding
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding : ActivityRegisterBinding
     lateinit var auth : FirebaseAuth
-    lateinit var database : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -43,7 +40,6 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
             val passwordConf = binding.KonfirmasiPassword.text.toString()
-
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.Email.error = "Email Tidak Valid"
                 binding.Email.requestFocus()
@@ -80,42 +76,31 @@ class RegisterActivity : AppCompatActivity() {
 
         }
     }
-    private fun RegisterFirebase(name: String, email: String, password: String, progressDialog: ProgressDialog) {
-        database = FirebaseDatabase.getInstance().getReference("Users")
-
-        val userId = database.push().key!!
-        val user = Users(userId,name,email,password)
-        database.child(userId).setValue(user)
-            .addOnCompleteListener {task ->
-            if (task.isSuccessful && task.getResult()!=null) {
-                binding.usernameRegister.text?.clear()
-                progressDialog.dismiss()
-                Toast.makeText(this, "data tersimpan", Toast.LENGTH_LONG).show()
-            }else{
-                progressDialog.dismiss()
-                Toast.makeText(this,"${task.exception?.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
+    private fun RegisterFirebase(name: String, email: String, password: String,progressDialog: ProgressDialog) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful && task.getResult()!=null) {
                     val users = Firebase.auth.currentUser
                     if (users!=null) {
+                        progressDialog.dismiss()
                         val profileUpdates = userProfileChangeRequest {
                             displayName = name
                         }
                         users!!.updateProfile(profileUpdates)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
+                                    progressDialog.dismiss()
                                     reload()
                                 }
                             }
                     }else{
+                        progressDialog.dismiss()
                         Toast.makeText(this,"Register Gagal", Toast.LENGTH_SHORT).show()
                     }
                     progressDialog.dismiss()
                     Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show()
-                    reload()
+                    saveUserInfo(name,email,password)
+
                 } else {
                     progressDialog.dismiss()
                     Toast.makeText(this,"${task.exception?.message}", Toast.LENGTH_SHORT).show()
@@ -123,8 +108,31 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
+    fun saveUserInfo(name: String, email: String, password: String) {
+        val currentUserID = FirebaseAuth.getInstance().currentUser!!.uid
+        val usersRef: DatabaseReference = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference.child("Users")
+        val userMap = HashMap<String, Any>()
+        userMap["uid"] = currentUserID
+        userMap["Username"] = name.toLowerCase()
+        userMap["Email"] = email
+        userMap["Password"] = password
+        userMap["Image"] = "https://firebasestorage.googleapis.com/v0/b/vircle-77b59.appspot.com/o/Default%20Images%2Fprofile.png?alt=media&token=980d517d-d1f8-4013-9602-fc3387d8c2f5"
+        usersRef.child(currentUserID).setValue(userMap)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                    Toast.makeText(this,"Account has been saved",Toast.LENGTH_SHORT).show()
+                }else{
+                    val message = task.exception!!.toString()
+                    Toast.makeText(this,"Error: $message", Toast.LENGTH_SHORT)
+                    auth.signOut()
+                }
+            }
+    }
+
+
     fun reload() {
         val intent = Intent(this, HomeActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         super.startActivity(intent)
     }
     public override fun onStart() {

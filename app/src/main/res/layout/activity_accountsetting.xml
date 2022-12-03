@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AccountsettingActivity">
+    android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayoutProfilesetting"
         android:layout_width="match_parent"
@@ -105,7 +104,20 @@
             android:gravity="center"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
+    <Button
+        android:id="@+id/btn_SignOutProfile"
+        style="@style/btnSolidRounded"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/_20pxh"
+        android:layout_marginRight="@dimen/_20pxh"
+        android:layout_marginTop="@dimen/_16pxh"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_16pxh"/>
     <Button
         android:id="@+id/btn_DeleteProfile"
         style="@style/btnSolidRounded"
@@ -113,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="6dp"
-        android:textColor="@color/design_default_color_primary"
+        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/_20pxh"
         android:layout_marginRight="@dimen/_20pxh"
         android:layout_marginTop="@dimen/_16pxh"

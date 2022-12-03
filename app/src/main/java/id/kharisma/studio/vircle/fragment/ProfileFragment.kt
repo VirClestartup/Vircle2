@@ -7,13 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import id.kharisma.studio.vircle.AccountsettingActivity
+import id.kharisma.studio.vircle.AccountSettingActivity
+import id.kharisma.studio.vircle.HomeActivity
 import id.kharisma.studio.vircle.Login_Activity
 import id.kharisma.studio.vircle.R
 import kotlinx.android.synthetic.main.fragment_profile.view.*
-import kotlinx.coroutines.Dispatchers.Main
 
 
 class ProfileFragment : Fragment() {
@@ -26,7 +24,9 @@ class ProfileFragment : Fragment() {
         user = FirebaseAuth.getInstance()
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
         view.btn_editProfile.setOnClickListener {
-            startActivity(Intent(context, AccountsettingActivity::class.java))
+            val intent = Intent(context, AccountSettingActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
         if (user.currentUser != null){
             user.currentUser?.let{
@@ -35,7 +35,9 @@ class ProfileFragment : Fragment() {
         }
         view.btnsignout.setOnClickListener {
             user.signOut()
-            startActivity(Intent(context,Login_Activity::class.java))
+            val intent = Intent(context, Login_Activity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
         return view
     }

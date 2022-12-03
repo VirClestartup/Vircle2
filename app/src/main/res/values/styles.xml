@@ -175,7 +175,13 @@
         <item name="android:textFontWeight" tools:targetApi="p">400</item>
         <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_19</item>
     </style>
-
+    <style name="btnSolidRounded12">
+        <item name="android:textSize">@dimen/_12pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+        <item name="android:background">@drawable/rectangle_bg_light_blue_200_radius_19</item>
+    </style>
     <style name="txtHappyMonkeyregular16_2">
         <item name="android:textSize">@dimen/_16pxh</item>
         <item name="android:textColor">@color/light_blue_400</item>

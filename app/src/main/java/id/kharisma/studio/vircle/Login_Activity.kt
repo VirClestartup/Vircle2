@@ -20,8 +20,10 @@ class Login_Activity : AppCompatActivity() {
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
         binding.txtDaftar.setOnClickListener{
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this@Login_Activity, RegisterActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
+            finish()
         }
 
         binding.btnMasuk.setOnClickListener{
@@ -64,8 +66,18 @@ class Login_Activity : AppCompatActivity() {
             }
     }
     fun reload() {
-        val intent = Intent(this, HomeActivity::class.java)
-        super.startActivity(intent)
+        val intent = Intent(this@Login_Activity, HomeActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+        finish()
+    }
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            reload();
+        }
     }
 
 
