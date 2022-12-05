@@ -70,6 +70,34 @@
                         android:textColorHint="@color/gray_700"
                         tools:ignore="TouchTargetSizeCheck" />
                 </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15pxh"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/InputFullnameregister"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="@dimen/_10pxh"
+                app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+                app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+                app:boxCornerRadiusTopEnd="@dimen/_10pxh">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullnameRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="@string/lbl_fullname"
+                    android:inputType="textPersonName"
+                    android:paddingStart="@dimen/_12pxh"
+                    android:paddingTop="@dimen/_6pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_7pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_700"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
