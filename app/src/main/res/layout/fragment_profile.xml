@@ -33,142 +33,154 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_110pxh"
-            android:layout_marginTop="@dimen/_15pxh">
+            android:layout_marginTop="@dimen/_15pxh"
+            android:orientation="horizontal">
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_150pxh"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginStart="@dimen/_60pxh">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/imageuser"
-                    android:layout_width="@dimen/_60pxh"
-                    android:layout_height="@dimen/_60pxh"
-                    android:src="@drawable/profile"
-                    android:layout_gravity="center_horizontal"
-                    />
-                <TextView
-                    android:id="@+id/profile_username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="username"
-                    style="@style/txtInterbold15"
-                    android:layout_marginTop="@dimen/_6pxv"
-                    android:textColor="@color/black"
-                    android:layout_below="@+id/imageuser"
-                    android:layout_gravity="center_horizontal"/>
-                <TextView
-                    android:id="@+id/profile_fullname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_6pxv"
-                    android:text="Fullname"
-                    style="@style/txtHappyMonkeyregular15"
-                    android:textColor="@color/black"
-                    android:layout_below="@+id/profile_username"
-                    android:layout_gravity="center_horizontal"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="28dp"
-                android:orientation="vertical"
-                >
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <LinearLayout
+                    android:orientation="vertical">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageuser"
+                        android:layout_width="@dimen/_60pxh"
+                        android:layout_height="@dimen/_60pxh"
+                        android:src="@drawable/profile"
+                        android:layout_gravity="center_horizontal"
+                        />
+                    <TextView
+                        android:id="@+id/profile_username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="username"
+                        style="@style/txtInterbold13"
+                        android:layout_marginTop="@dimen/_6pxv"
+                        android:textColor="@color/black"
+                        android:layout_below="@+id/imageuser"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/profile_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6pxv"
+                        android:text="Fullname"
+                        style="@style/txtHappyMonkeyregular12"
+                        android:textColor="@color/black"
+                        android:layout_below="@+id/profile_username"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="horizontal">
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <androidx.appcompat.widget.LinearLayoutCompat
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center">
-                                <TextView
-                                    android:id="@+id/total_post"
+                                android:orientation="horizontal">
+                                <androidx.appcompat.widget.LinearLayoutCompat
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    android:textColor="@android:color/black"/>
-                                <TextView
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:id="@+id/total_post"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Post"
+                                        android:textSize="15dp"
+                                        android:textColor="@android:color/black"/>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_marginLeft="@dimen/_10pxh"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Post"
-                                    android:textSize="20dp"
-                                    android:textColor="@android:color/black"/>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_marginLeft="@dimen/_10pxh"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center">
-                                <TextView
-                                    android:id="@+id/Total_Nakama"
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:id="@+id/Total_Nakama"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nakama"
+                                        android:textSize="15dp"
+                                        android:textColor="@android:color/black"/>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_marginLeft="@dimen/_10pxh"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    android:textColor="@android:color/black"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nakama"
-                                    android:textSize="20dp"
-                                    android:textColor="@android:color/black"/>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_marginLeft="@dimen/_10pxh"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:gravity="center">
-                                <TextView
-                                    android:id="@+id/Total_Following"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="0"
-                                    android:textSize="20dp"
-                                    android:textStyle="bold"
-                                    android:textColor="@android:color/black"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Following"
-                                    android:textSize="20dp"
-                                    android:textColor="@android:color/black"/>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
+                                    android:orientation="vertical"
+                                    android:gravity="center">
+                                    <TextView
+                                        android:id="@+id/Total_Following"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="0"
+                                        android:textSize="20dp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/black"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Following"
+                                        android:textSize="15dp"
+                                        android:textColor="@android:color/black"/>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </LinearLayout>
+
+
+
+                            <Button
+                                android:id="@+id/btn_editProfile"
+                                android:layout_width="@dimen/_170pxh"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@drawable/buttons_background"
+                                android:text="Edit Profile"
+                                android:textAllCaps="false"
+                                android:textStyle="bold"
+                                tools:ignore="TouchTargetSizeCheck" />
+
                         </LinearLayout>
 
-
-
-                        <Button
-                            android:id="@+id/btn_editProfile"
-                            android:layout_width="@dimen/_170pxh"
-                            android:layout_height="32dp"
-                            android:layout_marginTop="2dp"
-                            android:background="@drawable/buttons_background"
-                            android:text="Edit Profile"
-                            android:textAllCaps="false"
-                            android:textStyle="bold"
-                            tools:ignore="TouchTargetSizeCheck" />
-
                     </LinearLayout>
-
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
     </FrameLayout>

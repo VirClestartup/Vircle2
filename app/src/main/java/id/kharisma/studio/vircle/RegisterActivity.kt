@@ -36,6 +36,7 @@ class RegisterActivity : AppCompatActivity() {
             progressDialog.setMessage("Please wait")
             progressDialog.setCanceledOnTouchOutside(false)
             progressDialog.show()
+            val fullname = binding.fullnameRegister.text.toString()
             val name = binding.usernameRegister.text.toString()
             val email = binding.Email.text.toString()
             val password = binding.Password.text.toString()
@@ -43,6 +44,16 @@ class RegisterActivity : AppCompatActivity() {
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                 binding.Email.error = "Email Tidak Valid"
                 binding.Email.requestFocus()
+                return@setOnClickListener
+            }
+            if (fullname.isEmpty()){
+                binding.fullnameRegister.error = "nama Harus Diisi"
+                binding.fullnameRegister.requestFocus()
+                return@setOnClickListener
+            }
+            if (name.isEmpty()){
+                binding.usernameRegister.error = "Username Harus Diisi"
+                binding.usernameRegister.requestFocus()
                 return@setOnClickListener
             }
             //Validasi Email
@@ -70,13 +81,13 @@ class RegisterActivity : AppCompatActivity() {
                 binding.KonfirmasiPassword.requestFocus()
                 return@setOnClickListener
             }
-            RegisterFirebase(name,email,password,progressDialog)
+            RegisterFirebase(name,fullname,email,password,progressDialog)
 
 
 
         }
     }
-    private fun RegisterFirebase(name: String, email: String, password: String,progressDialog: ProgressDialog) {
+    private fun RegisterFirebase(name: String,fullname: String, email: String, password: String,progressDialog: ProgressDialog) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful && task.getResult()!=null) {
@@ -99,7 +110,7 @@ class RegisterActivity : AppCompatActivity() {
                     }
                     progressDialog.dismiss()
                     Toast.makeText(this, "Register Berhasil", Toast.LENGTH_SHORT).show()
-                    saveUserInfo(name,email,password)
+                    saveUserInfo(name,fullname,email,password)
 
                 } else {
                     progressDialog.dismiss()
@@ -108,12 +119,13 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
-    fun saveUserInfo(name: String, email: String, password: String) {
+    fun saveUserInfo(name: String,fullname: String, email: String, password: String) {
         val currentUserID = FirebaseAuth.getInstance().currentUser!!.uid
         val usersRef: DatabaseReference = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference.child("Users")
         val userMap = HashMap<String, Any>()
         userMap["uid"] = currentUserID
         userMap["Username"] = name.toLowerCase()
+        userMap["Fullname"] = fullname.toLowerCase()
         userMap["Email"] = email
         userMap["Password"] = password
         userMap["Image"] = "https://firebasestorage.googleapis.com/v0/b/vircle-77b59.appspot.com/o/Default%20Images%2Fprofile.png?alt=media&token=980d517d-d1f8-4013-9602-fc3387d8c2f5"

@@ -37,6 +37,7 @@ private var isFragment: Boolean = false) : RecyclerView.Adapter<UserAdapter.View
     override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
         val user = mUser[position]
         holder.userUsernameTextView.text = user.getUsername()
+        holder.userFullnameTextView.text = user.getFullname()
         Picasso.get().load(user.getImage()).placeholder(R.drawable.profile).into(holder.userProfileImage)
 
         checkFollowingStatus(user.getUID(), holder.followButton)
@@ -99,6 +100,7 @@ private var isFragment: Boolean = false) : RecyclerView.Adapter<UserAdapter.View
     class ViewHolder ( @NonNull itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         var userUsernameTextView: TextView = itemView.findViewById(R.id.username_search)
+        var userFullnameTextView: TextView = itemView.findViewById(R.id.fullname_search)
         var userProfileImage: CircleImageView = itemView.findViewById(R.id.userprofile_item)
         var followButton: Button = itemView.findViewById(R.id.btnFollow)
 

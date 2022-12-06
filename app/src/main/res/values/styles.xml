@@ -321,6 +321,12 @@
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">700</item>
     </style>
+    <style name="txtInterbold13">
+        <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/black_900</item>
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
 
     <style name="txtHappyMonkeyregular96">
         <item name="android:textSize">@dimen/_96pxh</item>
@@ -341,6 +347,12 @@
 
     <style name="txtHappyMonkeyregular13">
         <item name="android:textSize">@dimen/_13pxh</item>
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:fontFamily">@font/happy_monkey</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+    <style name="txtHappyMonkeyregular12">
+        <item name="android:textSize">@dimen/_12pxh</item>
         <item name="android:textColor">@color/gray_500</item>
         <item name="android:fontFamily">@font/happy_monkey</item>
         <item name="android:textFontWeight" tools:targetApi="p">400</item>

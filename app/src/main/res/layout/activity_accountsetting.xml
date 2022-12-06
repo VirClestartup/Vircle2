@@ -38,6 +38,7 @@
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/Profile_imageview"
         android:layout_width="@dimen/_150pxh"
@@ -73,7 +74,6 @@
             android:inputType="text"
             android:minHeight="48dp"
             android:textColorHint="@color/gray_701"
-            android:gravity="center"
              />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +101,6 @@
             android:hint="Username"
             android:inputType="text"
             android:minHeight="48dp"
-            android:gravity="center"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
