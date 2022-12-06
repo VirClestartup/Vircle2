@@ -1,5 +1,6 @@
 package id.kharisma.studio.vircle
 
+import android.app.ProgressDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -15,43 +16,61 @@ import android.widget.Toast
 import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import com.google.android.gms.tasks.Continuation
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.StorageTask
+import com.google.firebase.storage.UploadTask
 import com.squareup.picasso.Picasso
 import id.kharisma.studio.vircle.Model.User
 import id.kharisma.studio.vircle.databinding.ActivityAccountsettingBinding
 import kotlinx.android.synthetic.main.activity_accountsetting.*
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 import java.io.File
+import java.util.*
 import java.util.jar.Manifest
+import kotlin.collections.HashMap
 
 
 class AccountSettingActivity : AppCompatActivity() {
     lateinit var binding : ActivityAccountsettingBinding
     lateinit var auth : FirebaseAuth
     private var checker = ""
+    private var myUri = ""
     private lateinit var firebaseUser : FirebaseUser
     private lateinit var imageView: ImageView
     private lateinit var file : File
-    private lateinit var uri : Uri
-    private lateinit var camIntent:Intent
-    private lateinit var galIntent:Intent
-    private lateinit var cropIntent:Intent
+    private lateinit var storage : FirebaseStorage
+    private var storageProfilePicRef: StorageReference? = null
+    private lateinit var selectedImg : Uri
+    private lateinit var dialog: AlertDialog.Builder
+
+    companion object{
+        val IMAGE_REQUEST_CODE = 100
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityAccountsettingBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        imageView = findViewById(R.id.Profile_imageview)
-        enableRuntimePermission()
+        dialog = AlertDialog.Builder(this).setMessage("Updating Profile...")
+            .setCancelable(false)
+
+        storageProfilePicRef = FirebaseStorage.getInstance().reference.child("Profile Picture")
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
         auth = FirebaseAuth.getInstance()
+        imageView = findViewById(R.id.Profile_imageview)
         binding.btnSignOutProfile.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, Login_Activity::class.java)
@@ -59,13 +78,18 @@ class AccountSettingActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        imageView.setOnClickListener{
-            openDialog()
+        binding.ProfileImageview.setOnClickListener{
+            checker = "clicked"
+            pickImageGallery()
         }
-
+        binding.btnCloseProfile.setOnClickListener{
+            val intent = Intent(this@AccountSettingActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         binding.btnSaveProfile.setOnClickListener {
             if(checker == "clicked"){
-
+                uploadImageAndUpdateInfo()
             }else{
                 updateUserInfoOnly()
             }
@@ -74,121 +98,28 @@ class AccountSettingActivity : AppCompatActivity() {
     }
 
 
-    private fun openDialog() {
-        val openDialog = AlertDialog.Builder(this@AccountSettingActivity)
-        openDialog.setIcon(R.drawable.profile)
-        openDialog.setTitle("Choose your Image in...!!")
-        openDialog.setPositiveButton("Camera"){
-                dialog,_->
-            openCamera()
-            dialog.dismiss()
-
-        }
-        openDialog.setNegativeButton("Gallery"){
-                dialog,_->
-            openGallery()
-            dialog.dismiss()
-        }
-        openDialog.setNeutralButton("Cancel"){
-                dialog,_->
-            dialog.dismiss()
-        }
-        openDialog.create()
-        openDialog.show()
-
-    }
-
-    private fun openGallery() {
-        galIntent = Intent(Intent.ACTION_PICK,
-            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-        )
-        startActivityForResult(Intent.createChooser(galIntent,
-            "Select Image From Gallery "),2)
-    }
-
-    private fun openCamera() {
-        camIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        file = File(Environment.getExternalStorageDirectory(),
-            "file"+System.currentTimeMillis().toString()+".jpg"
-        )
-        uri = Uri.fromFile(file)
-        camIntent.putExtra(MediaStore.EXTRA_OUTPUT,uri)
-        camIntent.putExtra("return-data",true)
-        startActivityForResult(camIntent,0)
-    }
-
-    private fun enableRuntimePermission() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(
-                this@AccountSettingActivity,android.Manifest.permission.CAMERA
-            )){
-            Toast.makeText(this@AccountSettingActivity,
-                "Camera Permission allows us to Camera App",
-                Toast.LENGTH_SHORT).show()
-        }
-        else{
-            ActivityCompat.requestPermissions(this@AccountSettingActivity,
-                arrayOf(android.Manifest.permission.CAMERA),RequestPermissionCode)
-        }
-    }
-
-    private fun cropImages(){
-        /**set crop image*/
-        try {
-            cropIntent = Intent("com.android.camera.action.CROP")
-            cropIntent.setDataAndType(uri,"image/*")
-            cropIntent.putExtra("crop",true)
-            cropIntent.putExtra("outputX",180)
-            cropIntent.putExtra("outputY",180)
-            cropIntent.putExtra("aspectX",3)
-            cropIntent.putExtra("aspectY",4)
-            cropIntent.putExtra("scaleUpIfNeeded",true)
-            cropIntent.putExtra("return-data",true)
-            startActivityForResult(cropIntent,1)
-
-        }catch (e:ActivityNotFoundException){
-            e.printStackTrace()
-        }
+    private fun pickImageGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.action = Intent.ACTION_GET_CONTENT
+        intent.type = "image/*"
+        startActivityForResult(intent, 1)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 0 && resultCode == RESULT_OK){
-            cropImages()
-        } else if (requestCode == 2){
-            if (data != null){
-                uri = data.data!!
-                cropImages()
+        if(data != null){
+            if(data.data != null){
+                selectedImg = data.data!!
+
+                binding.ProfileImageview.setImageURI(selectedImg)
             }
         }
-        else if (requestCode == 1){
-            if (data != null){
-                val bundle = data.extras
-                val bitmap = bundle!!.getParcelable<Bitmap>("data")
-                imageView.setImageBitmap(bitmap)
-            }
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
+            imageView.setImageURI(data?.data)
+
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        when (requestCode) {
-            RequestPermissionCode-> if (grantResults.size>0
-                && grantResults[0]== PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this@AccountSettingActivity,
-                    "Permission Granted , Now your application can access Camera",
-                    Toast.LENGTH_SHORT).show()
-            }
-            else{
-                Toast.makeText(this@AccountSettingActivity,
-                    "Permission Granted , Now your application can not  access Camera",
-                    Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-
-    companion object{
-        const val RequestPermissionCode = 111
-    }
 
     private fun updateUserInfoOnly() {
         when {
@@ -198,13 +129,16 @@ class AccountSettingActivity : AppCompatActivity() {
             Username_editprofile.text.toString() == "" -> {
                 Toast.makeText(this,"Please write Username first", Toast.LENGTH_SHORT).show()
             }
+            selectedImg == null -> {
+                Toast.makeText(this,"Please select your image", Toast.LENGTH_SHORT).show()
+            }
             else -> {
                 val usersRef = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/")
                     .reference.child("Users")
                 val userMap = HashMap<String, Any>()
                 userMap["Username"] = Fullname_editprofile.text.toString().toLowerCase()
                 userMap["Fullname"] = Username_editprofile.text.toString().toLowerCase()
-
+                
                 usersRef.child(firebaseUser.uid).updateChildren(userMap)
                 Toast.makeText(this,"Account has been updated",Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@AccountSettingActivity, HomeActivity::class.java)
@@ -213,6 +147,7 @@ class AccountSettingActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun userInfo(){
         val usersRef = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/")
@@ -231,5 +166,57 @@ class AccountSettingActivity : AppCompatActivity() {
 
             }
         })
+    }
+    private fun uploadImageAndUpdateInfo() {
+        when{
+            TextUtils.isEmpty(Fullname_editprofile.text.toString()) -> {
+                Toast.makeText(this,"Please write Fullname first", Toast.LENGTH_SHORT).show()
+            }
+            Username_editprofile.text.toString() == "" -> {
+                Toast.makeText(this,"Please write Username first", Toast.LENGTH_SHORT).show()
+            }
+            selectedImg == null -> {
+                Toast.makeText(this,"Please select your image", Toast.LENGTH_SHORT).show()
+            }
+            else -> {
+                val progressDialog = ProgressDialog(this)
+                progressDialog.setTitle("Account Settings")
+                progressDialog.setMessage("Please wait, we are updating your profile....")
+                progressDialog.show()
+
+                val fileref = storageProfilePicRef!!.child(firebaseUser!!.uid + ".jpg")
+                var uploadTask : StorageTask<*>
+                uploadTask = fileref.putFile(selectedImg!!)
+                uploadTask.continueWithTask(Continuation <UploadTask.TaskSnapshot,Task<Uri>>{ task ->
+                    if(task.isSuccessful){
+                        task.exception?.let{
+                            throw it
+                            progressDialog.dismiss()
+                        }
+                    }
+                    return@Continuation  fileref.downloadUrl
+                }).addOnCompleteListener ( OnCompleteListener<Uri>{ task ->
+                    if (task.isSuccessful){
+                        val downloadUri = task.result
+                        myUri = downloadUri.toString()
+
+                        val ref = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference
+                            .child("Users")
+                        val userMap = HashMap<String, Any>()
+                        userMap["Username"] = Fullname_editprofile.text.toString().toLowerCase()
+                        userMap["Fullname"] = Username_editprofile.text.toString().toLowerCase()
+                        userMap["Image"] = myUri
+                        ref.child(firebaseUser.uid).updateChildren(userMap)
+                        Toast.makeText(this,"Account has been updated",Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@AccountSettingActivity, HomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                        progressDialog.dismiss()
+                    }else{
+                        progressDialog.dismiss()
+                    }
+                } )
+            }
+        }
     }
 }
