@@ -122,6 +122,10 @@ class AccountSettingActivity : AppCompatActivity() {
 
 
     private fun updateUserInfoOnly() {
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Account Settings1")
+        progressDialog.setMessage("Please wait, we are updating your profile....")
+        progressDialog.show()
         when {
             TextUtils.isEmpty(Fullname_editprofile.text.toString()) -> {
                 Toast.makeText(this,"Please write Fullname first", Toast.LENGTH_SHORT).show()
@@ -129,21 +133,19 @@ class AccountSettingActivity : AppCompatActivity() {
             Username_editprofile.text.toString() == "" -> {
                 Toast.makeText(this,"Please write Username first", Toast.LENGTH_SHORT).show()
             }
-            selectedImg == null -> {
-                Toast.makeText(this,"Please select your image", Toast.LENGTH_SHORT).show()
-            }
             else -> {
-                val usersRef = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/")
-                    .reference.child("Users")
+
+                val ref = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference
+                    .child("Users")
                 val userMap = HashMap<String, Any>()
-                userMap["Username"] = Fullname_editprofile.text.toString().toLowerCase()
-                userMap["Fullname"] = Username_editprofile.text.toString().toLowerCase()
-                
-                usersRef.child(firebaseUser.uid).updateChildren(userMap)
+                userMap["Fullname"] = Fullname_editprofile.text.toString().toLowerCase()
+                userMap["Username"] = Username_editprofile.text.toString().toLowerCase()
+                ref.child(firebaseUser.uid).updateChildren(userMap)
                 Toast.makeText(this,"Account has been updated",Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@AccountSettingActivity, HomeActivity::class.java)
                 startActivity(intent)
                 finish()
+                progressDialog.dismiss()
             }
         }
     }
@@ -151,7 +153,7 @@ class AccountSettingActivity : AppCompatActivity() {
 
     private fun userInfo(){
         val usersRef = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/")
-            .getReference().child("Users").child(firebaseUser.uid)
+            .reference.child("Users").child(firebaseUser.uid)
         usersRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
@@ -203,8 +205,8 @@ class AccountSettingActivity : AppCompatActivity() {
                         val ref = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference
                             .child("Users")
                         val userMap = HashMap<String, Any>()
-                        userMap["Username"] = Fullname_editprofile.text.toString().toLowerCase()
-                        userMap["Fullname"] = Username_editprofile.text.toString().toLowerCase()
+                        userMap["Fullname"] = Fullname_editprofile.text.toString().toLowerCase()
+                        userMap["Username"] = Username_editprofile.text.toString().toLowerCase()
                         userMap["Image"] = myUri
                         ref.child(firebaseUser.uid).updateChildren(userMap)
                         Toast.makeText(this,"Account has been updated",Toast.LENGTH_SHORT).show()
