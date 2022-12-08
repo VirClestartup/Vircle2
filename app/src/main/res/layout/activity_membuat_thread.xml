@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityMembuatThread">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayoutthreadsetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/threadToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/btn_Closethread"
+                    android:layout_width="@dimen/_20pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/close"/>
+                <ImageView
+                    android:id="@+id/btn_Savethread"
+                    android:layout_width="@dimen/_30pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_marginRight="@dimen/_15pxh"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/save_edited_info"/>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_5pxh"
+        android:layout_below="@+id/appbarlayoutthreadsetting">
+        <ImageView
+            android:id="@+id/image_thread"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250pxh"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image"/>
+
+        <EditText
+            android:id="@+id/deskripsithread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5pxh"
+            android:maxLines="6"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:inputType="textMultiLine"
+            android:hint="say something"
+            />
+    </LinearLayout>
+</RelativeLayout>

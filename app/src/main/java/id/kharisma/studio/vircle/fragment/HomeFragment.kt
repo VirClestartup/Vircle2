@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import id.kharisma.studio.vircle.AccountSettingActivity
 import id.kharisma.studio.vircle.Login_Activity
 import id.kharisma.studio.vircle.R
 import id.kharisma.studio.vircle.databinding.FragmentHomeBinding
@@ -24,16 +27,19 @@ class HomeFragment : Fragment() {
         user = FirebaseAuth.getInstance()
         binding = FragmentHomeBinding.inflate(layoutInflater)
         binding.chat.setOnClickListener{
-            requireActivity().run{
-                startActivity(Intent(this, Login_Activity::class.java))
-                finish()
-                Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent(context, ActivityChat::class.java)
+            startActivity(intent)
         }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        var recyclerView: RecyclerView? = null
+        recyclerView = view.findViewById(R.id.recycleHome)
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.reverseLayout = true
+        linearLayoutManager.stackFromEnd = true
+        recyclerView.layoutManager = linearLayoutManager
 
-
+        return view
     }
 
 }

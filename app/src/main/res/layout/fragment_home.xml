@@ -22,7 +22,8 @@
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:id="@+id/HomeToolbar">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,59 +47,13 @@
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout
-            android:id="@+id/lay_MenuTop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="55dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appbarlayout">
 
-            <TextView
-                android:layout_width="wrap_content"
-                style="@style/txtHappyMonkeyregular16_1"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="7dp"
-                android:text="Komunitas"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/txtHappyMonkeyregular16_1"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="7dp"
-                android:text="Popular"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/txtHappyMonkeyregular16_1"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="7dp"
-                android:text="Live"
-                android:textColor="@color/black" />
-
-        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleHome"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@+id/lay_MenuTop" />
+                    android:layout_below="@+id/appbarlayout" />
 
     </RelativeLayout>
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/view_menu">
-    </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
