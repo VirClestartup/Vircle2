@@ -13,14 +13,14 @@
         />
 
     <item
-        android:id="@+id/SearchMenu"
-        android:icon="@drawable/ic_search"
-        android:title="Search"
+        android:id="@+id/ThreadMenu"
+        android:icon="@drawable/plus"
+        android:title="Thread"
         />
     <item
-        android:id="@+id/NotificationMenu"
-        android:icon="@drawable/notifikasi"
-        android:title="Notification"
+        android:id="@+id/SearchMenu"
+        android:icon="@drawable/friends"
+        android:title="Search"
         />
     <item
         android:id="@+id/ProfileMenu"

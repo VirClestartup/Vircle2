@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import id.kharisma.studio.vircle.R
 
 
-class NotificationFragment : Fragment() {
+class ThreadFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -19,7 +20,7 @@ class NotificationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+        return inflater.inflate(R.layout.fragment_thread, container, false)
     }
 
 

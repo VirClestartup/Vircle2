@@ -34,8 +34,9 @@ class HomeActivity : AppCompatActivity() {
                 movetoFragment(SearchFragment())
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.NotificationMenu -> {
-                movetoFragment(NotificationFragment())
+            R.id.ThreadMenu -> {
+                it.isChecked
+                startActivity(Intent(this@HomeActivity, ActivityMembuatThread::class.java))
                 return@OnNavigationItemSelectedListener true
             }
             R.id.ProfileMenu -> {

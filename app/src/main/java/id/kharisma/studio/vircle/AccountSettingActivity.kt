@@ -63,9 +63,6 @@ class AccountSettingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        dialog = AlertDialog.Builder(this).setMessage("Updating Profile...")
-            .setCancelable(false)
-
         storageProfilePicRef = FirebaseStorage.getInstance().reference.child("Profile Picture")
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
