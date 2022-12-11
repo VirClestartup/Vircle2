@@ -82,9 +82,6 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             RegisterFirebase(name,fullname,email,password,progressDialog)
-
-
-
         }
     }
     private fun RegisterFirebase(name: String,fullname: String, email: String, password: String,progressDialog: ProgressDialog) {
@@ -133,6 +130,10 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful){
                     Toast.makeText(this,"Account has been saved",Toast.LENGTH_SHORT).show()
+                    FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference
+                        .child("Follow").child(currentUserID)
+                        .child("Following").child(currentUserID)
+                        .setValue(true)
                 }else{
                     val message = task.exception!!.toString()
                     Toast.makeText(this,"Error: $message", Toast.LENGTH_SHORT)
