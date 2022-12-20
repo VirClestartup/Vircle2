@@ -2,11 +2,10 @@ package id.kharisma.studio.vircle
 
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
@@ -134,6 +133,7 @@ class RegisterActivity : AppCompatActivity() {
                         .child("Follow").child(currentUserID)
                         .child("Following").child(currentUserID)
                         .setValue(true)
+                    reload()
                 }else{
                     val message = task.exception!!.toString()
                     Toast.makeText(this,"Error: $message", Toast.LENGTH_SHORT)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="lbl_search">Search</string>
-    <string name="app_name">VirCle2</string>
+    <string name="app_name">VirCle</string>
     <string name="loading">Loading?</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
@@ -121,7 +121,7 @@ Bulan</string>
     <string name="lbl_chat">Chat</string>
     <string name="msg_bergabunglah_me">Bergabunglah menjadi Member VirCle,
 Murah dan akan mendapatkan banyak keuntungan seperti contohnya fitur tambahan dan lainnya.</string>
-    <string name="msg_membuat_thread">Membuat thread, berkomentar, berdiskusi online, memberikan vote, serta bergabung dengan komunitas</string>
+    <string name="msg_membuat_thread">Membuat thread, berkomentar, berdiskusi online, serta bergabung dengan komunitas</string>
     <string name="lbl_1_bulan">1
 Bulan</string>
     <string name="msg_cukaso_11_jun">cukaso . 11 Juni 2022</string>
@@ -199,5 +199,16 @@ Bulan</string>
     <string name="lbl_Username">Username</string>
     <string name="lbl_konfirmasipassword">Konfirmasi Password</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>/>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="like">Like</string>
+    <string name="share">Share</string>
+    <string name="type_a_message">Type a message..</string>
+    <string name="user_profile_image">userProfileImage</string>
+    <string name="seen_image">seen Message</string>
+    <string name="media_icon">media icon</string>
+    <string name="type_message">Type Message</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="label_profile">Friends</string>
+    <string name="btn_save">Save</string>
+    <string name="lbl_join">Join</string>/>
 </resources>

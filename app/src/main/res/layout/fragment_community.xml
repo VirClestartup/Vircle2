@@ -8,15 +8,13 @@
     tools:context=".fragment.CommunityFragment"
     >
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50pxh"
         android:background="@color/black"
         android:id="@+id/lay_MenuTop">
         <LinearLayout
-
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_gravity="center"
@@ -25,35 +23,62 @@
             <TextView
                 android:id="@+id/txt_Komunitassaya"
                 android:layout_width="wrap_content"
-                style="@style/txtHappyMonkeyregular18"
+                style="@style/txtHappyMonkeyregular24"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginEnd="7dp"
-                android:text="Komunitas Saya"
+                android:text="Community"
                 android:textColor="@color/light_blue_600"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txt_Kominitaspopular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/txtHappyMonkeyregular18"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="7dp"
-                android:text="Popular"
-                android:textColor="@color/black" />
         </LinearLayout>
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="40dp"
+            android:layout_height="@dimen/_40pxh"
+            android:layout_gravity="right"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="@dimen/_6pxv"
+            android:background="@drawable/circle_blue_shape"
+            android:src="@drawable/img_plus"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </androidx.cardview.widget.CardView>
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="@dimen/_380pxh"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50pxh"
+        android:layout_marginLeft="@dimen/_17pxv"
+        android:id="@+id/InputSearchcom"
+        android:layout_gravity="center_horizontal"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="@dimen/_10pxh"
+        app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+        app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+        app:boxCornerRadiusTopEnd="@dimen/_10pxh">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchcommunity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/img_search"
+            android:drawablePadding="@dimen/_19pxh"
+            android:layout_below="@+id/lay_MenuTop"
+            android:hint="@string/lbl_search"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingStart="@dimen/_12pxh"
+            android:paddingTop="@dimen/_6pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_7pxv"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_701"
+            tools:ignore="Autofill" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ScrollView
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lay_MenuTop"
+        app:layout_constraintTop_toBottomOf="@id/InputSearchcom"
         android:layout_width="match_parent"
+        android:layout_below="@+id/InputSearchcom"
         android:layout_height="690dp"
-        android:layout_marginTop="60dp"
         android:padding="8dp">
 
 
@@ -68,9 +93,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="450dp" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

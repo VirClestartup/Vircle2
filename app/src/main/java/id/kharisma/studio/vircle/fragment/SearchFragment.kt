@@ -3,10 +3,10 @@ package id.kharisma.studio.vircle.fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -16,7 +16,6 @@ import com.google.firebase.database.ValueEventListener
 import id.kharisma.studio.vircle.Adapter.UserAdapter
 import id.kharisma.studio.vircle.Model.User
 import id.kharisma.studio.vircle.R
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_search.view.*
 
 class SearchFragment : Fragment() {
@@ -36,16 +35,15 @@ class SearchFragment : Fragment() {
 
         mUser = ArrayList()
         userAdapter = context?.let {
-            UserAdapter(it, mUser as ArrayList<User>,true)}
+            UserAdapter(it, mUser as ArrayList<User>)}
         recyclerView?.adapter = userAdapter
 
-        view.Searchtext.addTextChangedListener(object : TextWatcher{
+        view.Search.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (view.Searchtext.text.toString() == ""){
+                if (view.Search.text.toString() == ""){
 
                 }else{
                     recyclerView?.visibility = View.VISIBLE
@@ -65,6 +63,7 @@ class SearchFragment : Fragment() {
         val query = FirebaseDatabase.getInstance().getReference()
             .child("Users").orderByChild("Fullname")
             .startAt(input).endAt(input + "\uf0ff")
+
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 mUser?.clear()
@@ -87,7 +86,7 @@ class SearchFragment : Fragment() {
         val usersRef = FirebaseDatabase.getInstance().getReference().child("Users")
         usersRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (view?.Searchtext?.text.toString() == ""){
+                if (view?.Search?.text.toString() == ""){
                     mUser?.clear()
                     for (snapehot in dataSnapshot.children){
                         val user = snapehot.getValue(User::class.java)

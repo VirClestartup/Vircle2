@@ -22,19 +22,18 @@ import id.kharisma.studio.vircle.R
 import id.kharisma.studio.vircle.fragment.ProfileFragment
 
 class UserAdapter (private var mContext: Context,
-private var mUser: List<User>,
-private var isFragment: Boolean = false) : RecyclerView.Adapter<UserAdapter.ViewHolder>()
+private var mUser: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>()
 {
     private var firebaseUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.user_item_layout,parent,false)
-        return UserAdapter.ViewHolder(view)
+        return ViewHolder(view)
     }
     override fun getItemCount(): Int {
         return mUser.size
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val user = mUser[position]
         holder.userUsernameTextView.text = user.getUsername()
         holder.userFullnameTextView.text = user.getFullname()
@@ -103,7 +102,6 @@ private var isFragment: Boolean = false) : RecyclerView.Adapter<UserAdapter.View
         var userFullnameTextView: TextView = itemView.findViewById(R.id.fullname_search)
         var userProfileImage: CircleImageView = itemView.findViewById(R.id.userprofile_item)
         var followButton: Button = itemView.findViewById(R.id.btnFollow)
-
     }
 
     private fun checkFollowingStatus(uid: String, followButton: Button) {

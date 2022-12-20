@@ -42,34 +42,34 @@
                 style="@style/txtHappyMonkeyregular15"
                 tools:text="@string/msg_membuat_thread"/>
 
-                <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/InputNameregister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15pxh"
+                app:boxBackgroundColor="@color/white"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+                app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+                app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+                app:boxCornerRadiusTopStart="@dimen/_10pxh"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernameRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15pxh"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/InputNameregister"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusTopStart="@dimen/_10pxh"
-                    app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
-                    app:boxCornerRadiusBottomStart="@dimen/_10pxh"
-                    app:boxCornerRadiusTopEnd="@dimen/_10pxh">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/usernameRegister"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:minHeight="48dp"
-                        android:hint="@string/lbl_username"
-                        android:inputType="textPersonName"
-                        android:paddingStart="@dimen/_12pxh"
-                        android:paddingTop="@dimen/_6pxv"
-                        android:paddingEnd="@dimen/_30pxh"
-                        android:paddingBottom="@dimen/_7pxv"
-                        android:singleLine="true"
-                        android:textColorHint="@color/gray_700"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="@string/lbl_username"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:paddingStart="@dimen/_12pxh"
+                    android:paddingTop="@dimen/_6pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingBottom="@dimen/_7pxv"
+                    android:singleLine="true"
+                    android:textColorHint="@color/gray_700"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

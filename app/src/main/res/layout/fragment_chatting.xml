@@ -13,6 +13,6 @@
 
     <ScrollView
         android:layout_width="@dimen/_11pxv"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"></ScrollView>
 
 </FrameLayout>

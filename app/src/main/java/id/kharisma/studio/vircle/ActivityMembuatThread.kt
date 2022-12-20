@@ -3,11 +3,11 @@ package id.kharisma.studio.vircle
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -17,7 +17,6 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
-import kotlinx.android.synthetic.main.activity_accountsetting.*
 import kotlinx.android.synthetic.main.activity_membuat_thread.*
 
 class ActivityMembuatThread : AppCompatActivity() {
@@ -37,6 +36,7 @@ class ActivityMembuatThread : AppCompatActivity() {
         btn_Savethread.setOnClickListener{
         uploadImage()
         }
+
         val intent = Intent(Intent.ACTION_PICK)
         intent.action = Intent.ACTION_GET_CONTENT
         intent.type = "image/*"

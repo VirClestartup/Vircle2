@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewCommunityActivity">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50pxh"
+        android:background="@color/black"
+        android:id="@+id/lay_MenuTop">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_Komunitassaya"
+                android:layout_width="wrap_content"
+                style="@style/txtHappyMonkeyregular24"
+                android:layout_height="wrap_content"
+                android:text="Make Community"
+                android:textColor="@color/light_blue_600"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:id="@+id/linearColumndaftarvircle"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_20pxv"
+        android:layout_marginEnd="@dimen/_19pxh"
+        android:layout_marginStart="@dimen/_19pxh"
+        android:layout_marginTop="@dimen/_70pxv"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/Image_community"
+            android:layout_width="@dimen/_100pxh"
+            android:layout_height="@dimen/_100pxh"
+            android:src="@drawable/profile"
+            android:layout_gravity="center_horizontal"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/InputNamekomunitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            android:layout_marginTop="15dp"
+            app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+            app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+            app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+            app:boxCornerRadiusTopStart="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/namakomunitas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lbl_nama_komunitas"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:paddingStart="@dimen/_12pxh"
+                android:paddingTop="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_7pxv"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_700"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/deskripsi_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15pxh"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+            app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+            app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+            app:boxCornerRadiusTopStart="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/diskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lbl_deskripsi"
+                android:inputType="textPersonName"
+                android:minHeight="80dp"
+                android:paddingStart="@dimen/_12pxh"
+                android:paddingTop="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_7pxv"
+                android:singleLine="false"
+                android:textColorHint="@color/gray_700"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/alasan_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15pxh"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="@dimen/_10pxh"
+            app:boxCornerRadiusBottomStart="@dimen/_10pxh"
+            app:boxCornerRadiusTopEnd="@dimen/_10pxh"
+            app:boxCornerRadiusTopStart="@dimen/_10pxh"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/alasan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/lbl_alasan"
+                android:inputType="textPersonName"
+                android:minHeight="80dp"
+                android:paddingStart="@dimen/_12pxh"
+                android:paddingTop="@dimen/_6pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_7pxv"
+                android:singleLine="false"
+                android:textColorHint="@color/gray_700"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:ellipsize="end" android:gravity="center"
+            android:id="@+id/btnDaftar"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_12pxh"
+            android:layout_marginStart="@dimen/_12pxh"
+            android:layout_marginTop="@dimen/_40pxv"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/_11pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_11pxv"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:text="@string/lbl_daftar"
+            android:textAllCaps="false"
+            style="@style/btnSolidRounded" tools:text="@string/lbl_daftar"/>
+    </LinearLayout>
+
+</RelativeLayout>
