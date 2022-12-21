@@ -92,13 +92,12 @@ class NewCommunityActivity : AppCompatActivity() {
                     if (task.isSuccessful){
                         val downloadUri = task.result
                         myUri = downloadUri.toString()
-
                         val ref = FirebaseDatabase.getInstance("https://vircle-77b59-default-rtdb.firebaseio.com/").reference
                             .child("Community")
                         val communityId = ref.push().key
                         val communityMap = HashMap<String, Any>()
                         communityMap["Communityid"] = communityId!!
-                        communityMap["Name"] = binding.namakomunitas.text.toString().toLowerCase()
+                        communityMap["Name"] = binding.namakomunitas.text.toString()
                         communityMap["publisher"] = FirebaseAuth.getInstance().currentUser!!.uid
                         communityMap["Communityimage"] = myUri
                         communityMap["Deskripsi"] = binding.diskripsi.text.toString().toLowerCase()

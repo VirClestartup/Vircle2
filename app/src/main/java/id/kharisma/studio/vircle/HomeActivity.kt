@@ -1,17 +1,17 @@
 package id.kharisma.studio.vircle
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import id.kharisma.studio.vircle.databinding.ActivityhomepageBinding
-import id.kharisma.studio.vircle.fragment.*
+import id.kharisma.studio.vircle.fragment.BlankFragment
+import id.kharisma.studio.vircle.fragment.HomeFragment
+import id.kharisma.studio.vircle.fragment.ProfileFragment
+import id.kharisma.studio.vircle.fragment.SearchFragment
 
 
 class HomeActivity : AppCompatActivity() {
@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.CommunityMenu -> {
-                movetoFragment(CommunityFragment())
+                movetoFragment(BlankFragment())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.SearchMenu -> {

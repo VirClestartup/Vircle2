@@ -4,111 +4,140 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
-        android:id="@+id/useritem_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/community_item"
-            android:layout_width="@dimen/_70pxh"
-            android:layout_height="@dimen/_70pxh"
-            android:layout_marginLeft="@dimen/_10pxh"
-            android:padding="@dimen/_5pxh"
-            android:src="@drawable/profile"
-            />
+        android:orientation="vertical">
         <LinearLayout
-            android:layout_width="@dimen/_220pxh"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/communityname"
-                style="@style/txtHappyMonkeyregular15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/userprofile_item"
-                android:layout_marginTop="@dimen/_5pxh"
-                android:text="Community Name" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <TextView
-                        android:id="@+id/jml_thread"
-                        style="@style/txtHappyMonkeyregular12"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/userprofile_item"
-                        android:layout_marginTop="@dimen/_5pxh"
-                        android:gravity="center"
-                        android:visibility="visible"
-                        android:textColor="@color/light_blue_400"
-                        android:text="123" />
-                    <TextView
-                        android:id="@+id/Thread"
-                        style="@style/txtHappyMonkeyregular12"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/userprofile_item"
-                        android:layout_marginTop="@dimen/_5pxh"
-                        android:gravity="center"
-                        android:textColor="@color/light_blue_400"
-                        android:text="Thread" />
-                    <TextView
-                        android:id="@+id/jml_member"
-                        style="@style/txtHappyMonkeyregular12"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/userprofile_item"
-                        android:layout_marginTop="@dimen/_5pxh"
-                        android:textColor="@color/light_blue_400"
-                        android:gravity="center"
-                        android:visibility="visible"
-                        android:text="123" />
-                    <TextView
-                        android:id="@+id/member"
-                        style="@style/txtHappyMonkeyregular12"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/userprofile_item"
-                        android:layout_marginTop="@dimen/_5pxh"
-                        android:textColor="@color/light_blue_400"
-                        android:gravity="center"
-                        android:text="Member" />
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center"
+            android:id="@+id/useritem_layout"
             >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/community_item"
+                android:layout_width="@dimen/_70pxh"
+                android:layout_height="@dimen/_70pxh"
+                android:layout_marginLeft="@dimen/_10pxh"
+                android:padding="@dimen/_5pxh"
+                android:src="@drawable/profile"
+                />
+            <LinearLayout
+                android:layout_width="@dimen/_220pxh"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/communityname"
+                    style="@style/txtHappyMonkeyregular15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userprofile_item"
+                    android:layout_marginTop="@dimen/_5pxh"
+                    android:text="Community Name" />
+                <TextView
+                    android:id="@+id/publisher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/lbl_fullname"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:textColor="@color/light_blue_600"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/jml_thread"
+                            style="@style/txtHappyMonkeyregular12"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userprofile_item"
+                            android:layout_marginTop="@dimen/_5pxh"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:textColor="@color/light_blue_400"
+                            android:text="" />
+                        <TextView
+                            android:id="@+id/Thread"
+                            style="@style/txtHappyMonkeyregular12"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userprofile_item"
+                            android:layout_marginTop="@dimen/_5pxh"
+                            android:gravity="center"
+                            android:textColor="@color/light_blue_400"
+                            android:text="Thread" />
+                        <TextView
+                            android:id="@+id/jml_member"
+                            style="@style/txtHappyMonkeyregular12"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userprofile_item"
+                            android:layout_marginTop="@dimen/_5pxh"
+                            android:textColor="@color/light_blue_400"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:text="" />
+                        <TextView
+                            android:id="@+id/member"
+                            style="@style/txtHappyMonkeyregular12"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userprofile_item"
+                            android:layout_marginTop="@dimen/_5pxh"
+                            android:textColor="@color/light_blue_400"
+                            android:gravity="center"
+                            android:text="Member" />
+                    </LinearLayout>
+                </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnJoin"
-                style="@style/btnSolidRounded"
-                android:layout_width="@dimen/_90pxh"
-                android:layout_height="@dimen/_30pxh"
-                android:layout_below="@+id/username_search"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="@dimen/_10pxh"
-                android:layout_marginTop="@dimen/_10pxh"
-                android:layout_marginEnd="@dimen/_10pxh"
-                android:layout_marginBottom="@dimen/_10pxh"
-                android:ellipsize="end"
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:singleLine="true"
-                android:textColor="@color/white"
-                android:text="@string/lbl_join"
-                android:textAllCaps="false"
-                tools:ignore="TouchTargetSizeCheck" />
+                >
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnJoin"
+                    style="@style/btnSolidRounded"
+                    android:layout_width="@dimen/_90pxh"
+                    android:layout_height="@dimen/_30pxh"
+                    android:layout_below="@+id/username_search"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_10pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginBottom="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:text="@string/lbl_join"
+                    android:textAllCaps="false"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+        <TextView
+            android:layout_below="@+id/useritem_layout"
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/_10pxh"
+            android:layout_marginBottom="@dimen/_10pxh"
+            android:textColor="@color/white_A700"
+            />
+        </LinearLayout>
+
+
 </RelativeLayout>

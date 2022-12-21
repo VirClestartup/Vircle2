@@ -30,7 +30,8 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <ImageView
+            android:id="@+id/btn_buatcom"
             android:layout_width="40dp"
             android:layout_height="@dimen/_40pxh"
             android:layout_gravity="right"
@@ -38,6 +39,7 @@
             android:layout_marginRight="@dimen/_6pxv"
             android:background="@drawable/circle_blue_shape"
             android:src="@drawable/img_plus"
+            android:clickable="true"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </androidx.cardview.widget.CardView>
     <com.google.android.material.textfield.TextInputLayout
@@ -45,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_50pxh"
         android:layout_marginLeft="@dimen/_17pxv"
+        android:layout_marginRight="@dimen/_17pxv"
         android:id="@+id/InputSearchcom"
         android:layout_gravity="center_horizontal"
         app:boxBackgroundColor="@color/white"
@@ -72,33 +75,12 @@
             tools:ignore="Autofill" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ScrollView
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/InputSearchcom"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleCommunity"
         android:layout_width="match_parent"
-        android:layout_below="@+id/InputSearchcom"
-        android:layout_height="690dp"
-        android:padding="8dp">
+        android:layout_height="match_parent"
 
+        android:layout_below="@+id/InputSearchcom" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_daftarberita"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="450dp" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
 </RelativeLayout>

@@ -9,7 +9,7 @@ class Community {
     private var publisher: String = ""
 
     constructor()
-    constructor(Name:String,Deskripsi: String,Alasan: String,Communityimage: String,Communityid : String, publisher: String){
+    constructor(Name: String,Deskripsi: String,Alasan: String,Communityimage: String,Communityid : String, publisher: String){
         this.communityName = Name
         this.Deskripsi = Deskripsi
         this.Alasan = Alasan
