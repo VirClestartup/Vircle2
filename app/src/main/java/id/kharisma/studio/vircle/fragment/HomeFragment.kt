@@ -14,8 +14,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import id.kharisma.studio.vircle.ActivityUsers
 import id.kharisma.studio.vircle.Adapter.PostAdapter
+import id.kharisma.studio.vircle.BlankActivity
 import id.kharisma.studio.vircle.Model.Post
 import id.kharisma.studio.vircle.R
 import id.kharisma.studio.vircle.databinding.FragmentHomeBinding
@@ -43,7 +43,7 @@ class HomeFragment : Fragment() {
         //val btnchat = view.findViewById<Button>(R.id.btn_Chat)as Button
         view.btn_Chat.setOnClickListener{
             //Toast.makeText(context, "You clicked me.", Toast.LENGTH_SHORT).show()
-            val intent = Intent(context,ActivityUsers::class.java)
+            val intent = Intent(context, BlankActivity::class.java)
             startActivity(intent)
         }
         val linearLayoutManager = LinearLayoutManager(context)

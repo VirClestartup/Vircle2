@@ -1,21 +1,15 @@
 package id.kharisma.studio.vircle
 
 import android.app.ProgressDialog
-import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
 import android.text.TextUtils
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
@@ -23,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
@@ -34,11 +27,7 @@ import com.squareup.picasso.Picasso
 import id.kharisma.studio.vircle.Model.User
 import id.kharisma.studio.vircle.databinding.ActivityAccountsettingBinding
 import kotlinx.android.synthetic.main.activity_accountsetting.*
-import kotlinx.android.synthetic.main.fragment_profile.view.*
 import java.io.File
-import java.util.*
-import java.util.jar.Manifest
-import kotlin.collections.HashMap
 
 
 class AccountSettingActivity : AppCompatActivity() {
@@ -74,7 +63,20 @@ class AccountSettingActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
+        binding.btnDeleteProfile.setOnClickListener {
+            val user = firebaseUser
+            user.delete().addOnCompleteListener {
+                if(it.isSuccessful){
+                    Toast.makeText(this,"Account Successfully Deleted", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, RegisterActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    super.startActivity(intent)
+                }else{
+                    Log.e("error: ",it.exception.toString())
+                }
 
+            }
+        }
         binding.ProfileImageview.setOnClickListener{
             checker = "clicked"
             pickImageGallery()

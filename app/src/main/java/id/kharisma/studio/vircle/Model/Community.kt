@@ -2,8 +2,8 @@ package id.kharisma.studio.vircle.Model
 
 class Community {
     private var communityName: String = ""
-    private var Deskripsi: String = ""
-    private var Alasan: String = ""
+    private var deskripsi: String = ""
+    private var alasan: String = ""
     private var communityImage: String = ""
     private var communityId: String = ""
     private var publisher: String = ""
@@ -11,8 +11,8 @@ class Community {
     constructor()
     constructor(Name: String,Deskripsi: String,Alasan: String,Communityimage: String,Communityid : String, publisher: String){
         this.communityName = Name
-        this.Deskripsi = Deskripsi
-        this.Alasan = Alasan
+        this.deskripsi = Deskripsi
+        this.alasan = Alasan
         this.communityImage = Communityimage
         this.communityId = Communityid
         this.publisher = publisher
@@ -27,19 +27,19 @@ class Community {
     }
     fun getDeskripsi(): String
     {
-        return Deskripsi
+        return deskripsi
     }
     fun setDeskripsi(Deskripsi: String)
     {
-        this.Deskripsi = Deskripsi
+        this.deskripsi = Deskripsi
     }
     fun getAlasan(): String
     {
-        return Alasan
+        return alasan
     }
     fun setAlasan(Alasan: String)
     {
-        this.Alasan = Alasan
+        this.alasan = Alasan
     }
     fun getcommunityImage(): String
     {

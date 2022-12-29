@@ -1,18 +1,15 @@
 package id.kharisma.studio.vircle
 
-import android.content.ContentValues
+//import com.google.firebase.messaging.FirebaseMessaging
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
-import com.google.firebase.messaging.FirebaseMessaging
 import id.kharisma.studio.vircle.Adapter.UsersAdapter
 import id.kharisma.studio.vircle.Model.User
 import id.kharisma.studio.vircle.databinding.ActivityUsersBinding
@@ -27,7 +24,7 @@ class ActivityUsers : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         FirebaseService.sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
-        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+        /*FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
                 Log.w(ContentValues.TAG, "Fetching FCM registration token failed", task.exception)
                 return@OnCompleteListener
@@ -35,7 +32,7 @@ class ActivityUsers : AppCompatActivity() {
 
             // Get new FCM registration token
             val token = task.result
-        })
+        })*/
         userRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
         imgBack.setOnClickListener {
@@ -48,7 +45,7 @@ class ActivityUsers : AppCompatActivity() {
         val firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
 
         var userid = firebase.uid
-        FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userid")
+        //FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userid")
 
 
         val databaseReference: DatabaseReference =

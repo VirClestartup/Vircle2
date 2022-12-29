@@ -1,5 +1,6 @@
 package id.kharisma.studio.vircle.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_community.view.*
 class CommunityFragment : Fragment() {
     private var recyclerView: RecyclerView? = null
     private var Adapter: AdapterCommunity? = null
-    private var mStress: MutableList<Community>? = null
+    private var mCommunity: MutableList<Community>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +35,9 @@ class CommunityFragment : Fragment() {
         recyclerView?.setHasFixedSize(true)
         recyclerView?.layoutManager = LinearLayoutManager(context)
 
-        mStress = ArrayList()
+        mCommunity = ArrayList()
         Adapter = context?.let {
-            AdapterCommunity(it, mStress as ArrayList<Community>)
-        }
+            AdapterCommunity(it, mCommunity as ArrayList<Community>)}
         recyclerView?.adapter = Adapter
 
         view.searchcommunity.addTextChangedListener(object : TextWatcher {
@@ -48,7 +48,7 @@ class CommunityFragment : Fragment() {
                 if (view.searchcommunity.text.toString() == ""){
 
                 }else{
-                    //recyclerView?.visibility = View.VISIBLE
+                    recyclerView?.visibility = View.VISIBLE
 
                     retrieveUsers()
                     searchUser(s.toString().toLowerCase())
@@ -57,7 +57,7 @@ class CommunityFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
             }
         })
-        retrieveUsers()
+        //retrieveUsers()
         return view
     }
 
@@ -67,12 +67,13 @@ class CommunityFragment : Fragment() {
             .startAt(input).endAt(input + "\uf0ff")
 
         query.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                mStress?.clear()
+                mCommunity?.clear()
                 for (snapehot in dataSnapshot.children){
                     val community = snapehot.getValue(Community::class.java)
                     if (community != null){
-                        mStress?.add(community)
+                        mCommunity?.add(community)
                     }
                 }
                 Adapter?.notifyDataSetChanged()
@@ -87,13 +88,14 @@ class CommunityFragment : Fragment() {
     private fun retrieveUsers() {
         val usersRef = FirebaseDatabase.getInstance().getReference("Community")
         usersRef.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (view?.searchcommunity?.text.toString() == ""){
-                    mStress?.clear()
+                    mCommunity?.clear()
                     for (snapshot in dataSnapshot.children){
                         val community = snapshot.getValue(Community::class.java)
                         if (community != null){
-                            mStress?.add(community)
+                            mCommunity?.add(community)
                         }
                     }
                     Adapter?.notifyDataSetChanged()

@@ -46,7 +46,7 @@ class SearchFragment : Fragment() {
                 if (view.Search.text.toString() == ""){
 
                 }else{
-                    //recyclerView?.visibility = View.VISIBLE
+                    recyclerView?.visibility = View.VISIBLE
 
                     retrieveUsers()
                     searchUser(s.toString().toLowerCase())
